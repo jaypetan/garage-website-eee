@@ -16,7 +16,7 @@ function App() {
   return (
     <BrowserRouter>
     <Routes>
-      <Route path="/garage-website" element={<Home />} />
+      <Route path="/" element={<Home />} />
       <Route path="ambassador-detail" element={<AmbassadorDetail />} />
       <Route path="events" element={<Events />} />
       <Route path="events/:id" element={<EventDetail />} />
