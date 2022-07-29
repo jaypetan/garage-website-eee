@@ -1,18 +1,25 @@
 header {
     width: 100vw;
     height: 100px;
-    background-color: white;
+    background-color: black;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    color: black;
+    color: white;
     padding: 10px 30px;
     position: fixed;
     z-index: 5;
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+}
+
 header div button {
-    background: black;
+    background: white;
 }
 
 #menu-icon-container {
@@ -26,7 +33,7 @@ header div button {
 .bar1, .bar2, .bar3 {
     width: 40px;
     height: 6px;
-    background-color: black;
+    background-color: white;
     margin: 6px 0;
     transition: all 0.8s ease;
     border-radius: 2.5px;
@@ -61,13 +68,34 @@ header div button {
 #menu a {
     color: white;
     text-decoration: none;
+    font-size: 5vw;
+    margin: 0px;
+    padding: 1vw 3vw;
 }
 
 #menu a:hover {
     background-color: rgb(61, 61, 61);
 }
 
-#menu a h2 {
+#menu a h3 {
     margin: 0px;
-    padding: 10px;
+    padding: 0px;
+    color: white;
+    line-height: normal;
+
+}
+
+#menu hr {
+  border: 1px solid rgb(70, 70, 70);
+  border-radius: 0.5px;
+  margin: 0px;
+  padding: 0px, 1vw;
+}
+
+.wondering-img {
+  width: 30%;
+  position:absolute;
+  margin: 0 auto;
+  left: 38%;
+  bottom: 150px;
 }

@@ -6,9 +6,11 @@ import {
 
 import Home from "./routes/home/Home";
 import AmbassadorDetail from "./routes/ambassador-detail/AmbassadorDetail";
+import Events from "./routes/events/Events";
 import EventDetail from "./routes/event-detail/EventDetail";
-import WorkshopDetail from "./routes/workshop-detail/WorkshopDetail";
-import Workshops from "./routes/workshops/Workshops";
+import Project from "./routes/projects/Project";
+import ProjectDetail from "./routes/project-detail/ProjectDetail";
+import NotFound from "./routes/not-found/NotFound";
 
 function App() {
   return (
@@ -16,11 +18,13 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="ambassador-detail" element={<AmbassadorDetail />} />
-      <Route path="event-detail" element={<EventDetail />} />
-      <Route path="workshop-detail" element={<WorkshopDetail />} />
-      <Route path="workshops" element={<Workshops />} />
+      <Route path="events" element={<Events />} />
+      <Route path="events/:id" element={<EventDetail />} />
+      <Route path="projects" element={<Project />} />
+      <Route path="projects/:id" element={<ProjectDetail />} />
+      <Route path="*" element={<NotFound />}/>
     </Routes>
-  </BrowserRouter>
+    </BrowserRouter>
   );
 }
 

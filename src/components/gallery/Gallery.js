@@ -25,7 +25,8 @@ function Carousel(props){
     const contentList = props.data.content.map((item) => 
         <CarouselItem data={{
                                 itemContent: item,
-                                titlePosition: titlePosition
+                                titlePosition: titlePosition,
+                                slug: props.data.slug
                             }} key={item.name}/>
     );
 

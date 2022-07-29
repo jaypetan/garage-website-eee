@@ -6,13 +6,17 @@ function CarouselItem(props) {
     const content = props.data.itemContent;
     const titlePosition = props.data.titlePosition;
 
-    const link = props.data.link || "https://reactjs.org/"
+    let imgSrc = content.displayImageUrl
+
+    //imgSrc = "https://drive.google.com/uc?export=view&id=" + imgSrc.substring(31, imgSrc.length)
+
+    const link = "/" + props.data.slug + "/" + String(content.pk)//props.data.link || "https://reactjs.org/"
     const backgroundImage = {
-        backgroundImage: `url(${content.displayImage})`
+        backgroundImage: `url(${imgSrc})`
     }
 
     const itemHeadingBot =             
-        <h3 className='title' style={{padding:"2rem 0"}}>
+        <h3 className='title'>
             { content.name }
         </h3>
     
@@ -23,7 +27,7 @@ function CarouselItem(props) {
 
     return(
         <a href={ link } className="col-6 col-lg-4" style={{textDecoration:"none"}}>
-            <div key={content.id} className="item-container rounded-5" style={backgroundImage}>
+            <div key={content.pk} className="item-container" style={backgroundImage}>
                 <div className='title-container'>
                     { content.name && titlePosition === "botIn" && itemHeadingTop }
                 </div>

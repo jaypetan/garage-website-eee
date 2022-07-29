@@ -1,10 +1,7 @@
 /* by brandon 6/14/2022 */
 footer {
     background-color: #284D89;
-    border-radius: 3.125rem 3.125rem 0 0;
     width: 100%;
-
-    margin-top: 10rem;
     min-height: 19.375rem;
 
     color: #FFFFFF;
@@ -17,6 +14,18 @@ footer {
 footer .texts, footer .social-media {
     padding: 3.125rem 6.25rem;
 }
+
+@media only screen and (max-width: 440px) {
+    footer .texts, footer .social-media {
+        padding: 2rem 2rem;
+    }
+  }
+
+@media only screen and (max-width: 600px) and (min-width: 441px) {
+    footer .texts, footer .social-media {
+        padding: 2rem 2.5rem;
+    }
+  }
 
 footer .social-media {
     align-self: flex-end;
@@ -45,4 +54,19 @@ footer p, footer h4 {
     margin: 0px;
     color: #FFFFFF;
 }
+
+footer p {
+    font-size: 3vw;
+    line-height: 1.5;
+    color: #d8d7d7;
+}
+
+@media only screen and (min-width: 440px) {
+    footer p {
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #d8d7d7;
+    }
+  }
+
 /* modification ends */

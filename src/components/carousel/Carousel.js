@@ -11,9 +11,9 @@ function Carousel(props) {
 
     // dynamically generate perPage prop for the carousel
     let SplidePageNum = (pageWidth) => {
-        if(pageWidth > 1600) {
+        if(pageWidth > 1100) {
             return 3
-        } else if (pageWidth > 800) {
+        } else if (pageWidth > 600) {
             return 2
         } else if (pageWidth > 0) {
             return 1
@@ -23,17 +23,19 @@ function Carousel(props) {
     let imgSrc = ""
     for (let i = 0; i < contentList.length; i++){
         let content = contentList[i]
-        imgSrc = content.displayImage
+        imgSrc = content.displayImageUrl
+        //imgSrc = "https://drive.google.com/uc?export=view&id=" + imgSrc.substring(31, imgSrc.length)
+        
         tilesRenderList.push(
             <SplideSlide key={i}>
-                <div className="card h-100 border-0 rounded-5">
-                    <img src={imgSrc} className="card-img-top square-fit" alt="..."/>
-                    <div className="card-body p-4">
-                        <div className="card-title h3 position-relative top-50 start-50 translate-middle">
+                <a href={props.data.slug + "/" + content.pk} className="card h-100 border-0 rounded-5">
+                    <img src={imgSrc} className="card-img-top card-img" alt="..."/>
+                    <div className="card-body p-4 card-title-wrapper">
+                        <div className="h3 position-relative top-50 start-50 translate-middle card-title">
                             { content.name }
                         </div>
                     </div>
-                </div>
+                </a>
             </SplideSlide>
         )
     }

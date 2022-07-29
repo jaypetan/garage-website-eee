@@ -23,6 +23,7 @@ class Footer extends React.Component {
                     <p>
                         School of Electrical and Electronic Engineering S1-B3c-26
                     </p>
+                    <br />
                     <p>© Copyright 2022</p>
                     <p>All rights reserved.</p>
                 </div>

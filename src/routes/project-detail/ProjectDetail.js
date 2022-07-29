@@ -6,11 +6,11 @@ import Footer from "../../components/footer/Footer";
 import LinkPreview from "../../components/link-preview/LinkPreview";
 import Loading from "../../components/loading/Loading";
 
-import "./EventDetail.css";
+import "./ProjectDetail.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-function EventDetail(){
+function ProjectDetail(){
     const params = useParams()
     const id = params.id
     const [{state, isLoading}, setState] = useState({state: {}, isLoading: true});
@@ -18,7 +18,7 @@ function EventDetail(){
     const apiDomain = "http://127.0.0.1:8000/api/";
 
     useEffect(() => {
-        const url = apiDomain + "events/" + String(id);
+        const url = apiDomain + "projects/" + String(id);
 
         const fetchData = async () => {
             try {
@@ -80,4 +80,4 @@ function EventDetail(){
         );
 };
 
-export default EventDetail;
+export default ProjectDetail;

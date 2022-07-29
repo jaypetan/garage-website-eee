@@ -1,0 +1,53 @@
+.link-preview {
+    background-color: white;
+    display:flex;
+    flex-direction: row;
+    border-radius: 3vw;
+    align-items: center;
+}
+
+.link-preview:link {
+    text-decoration: none;
+}
+
+.link-preview span{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1.8vw 0vw;
+}
+
+.link{
+    font-size: 1.3vw;
+    margin-bottom: 0px;
+    text-decoration: underline;
+    color: #284D89;
+    line-height: 1.2;
+}
+
+.link-visit{
+    font-size: 3vw;
+    line-height: 1.2;
+    margin-bottom: 0px;
+}
+
+.link-preview img{
+    width: 6vw;
+    margin: 1.4vw;
+    height: 100%;
+}
+
+@media (max-width:1024px) {
+    .link{
+        font-size: 2vw;
+    }
+    
+    .link-visit{
+        font-size: 5vw;
+    }
+
+    .link-preview img{
+        width: 7vw;
+        margin: 2.7vw;
+    }
+}

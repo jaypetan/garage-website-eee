@@ -1,10 +1,15 @@
 /* OVERALL STYLING */
-html {
+html{
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 *, *:before, *:after {
   box-sizing: inherit;
+}
+
+a {
+  text-decoration: none;
 }
 
 /* by brandon 6/9/2022 */
@@ -15,15 +20,14 @@ p, h2, h3, h4 {
 }
 
 p {
-  font-weight: 400;
-  font-size: 1.5rem;
-  line-height: 1.875rem;
+  font-size: 5vw;
+  line-height: 1.2rem;
 }
 
 h2 {
   font-weight: 500;
-  font-size: 6rem;
-  line-height: 7.5rem;
+  font-size: 5.5vw;
+  line-height: 1;
   text-transform: uppercase;
 }
 
@@ -39,24 +43,15 @@ h4 {
   line-height: 1.875rem;
 }
 
-.container {
-  max-width: 80%;
-}
 
 @media (max-width: 576px) {
   h2 {
     font-weight: 500;
-    font-size: 3.7rem;
-    line-height: 5.5rem;
-    text-transform: uppercase;
+    font-size: 10vw;
+    line-height: 10vw;
   }
 }
 
-@media (min-width: 1400px) {
-  .container {
-    max-width: 80%;
-  }
-}
 /* modification ends */
 
 body {

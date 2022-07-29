@@ -2,6 +2,8 @@ import React from "react";
 
 import "./Header.css";
 
+import wondering from "../../img/wondering.png"
+
 class Header extends React.Component {
     constructor() {
         super();
@@ -19,7 +21,10 @@ class Header extends React.Component {
         return(
             <div>
                 <header>
-                    <h1>LOGO</h1>
+                    <a href="/" className="logo">
+                        <h1>Garage@EEE</h1>
+                    </a>
+                    
                     <div id="menu-icon-container" className={this.state.menuIsActive ? "change" : null}>
                         <div onClick={this.handleClick}>
                             <div className="bar1"></div>
@@ -30,10 +35,15 @@ class Header extends React.Component {
                 </header>
                 <div id="menu" style={{right: `${this.state.menuIsActive ? "0px" : "-300px"}`}}>
                     {/* insert hyperlinks below */}
-                    <a href="#"><h2>Link 1</h2></a>
-                    <a href="#"><h2>Link 2</h2></a>
-                    <a href="#"><h2>Link 3</h2></a>
+                    <a href="/"><h3>Home</h3></a>
+                    <hr/>
+                    <a href="/events"><h3>Events</h3></a>
+                    <hr/>
+                    <a href="/projects"><h3>Projects</h3></a>
+                    <hr/>
+                    <img src={wondering} alt="" className="wondering-img"/>
                 </div>
+                
             </div>
             
         )
