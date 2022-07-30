@@ -15,7 +15,7 @@ function EventDetail(){
     const id = params.id
     const [{state, isLoading}, setState] = useState({state: {}, isLoading: true});
 
-    const apiDomain = "http://127.0.0.1:8000/api/";
+    const apiDomain = "https://ntueeegarage.pythonanywhere.com/api/";
 
     useEffect(() => {
         const url = apiDomain + "events/" + String(id);

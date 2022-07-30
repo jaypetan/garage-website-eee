@@ -21,7 +21,7 @@ class Home extends React.Component{
         };
     };
 
-    apiDomain = "http://127.0.0.1:8000/api/";
+    apiDomain = "https://ntueeegarage.pythonanywhere.com/api/";
 
     componentDidMount() {
         fetch(this.apiDomain+"home/")
