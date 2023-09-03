@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "version": "0.1.0",
-  "homepage": "https://ntueeegarage.github.io/garage-website",
+  "homepage": "http://localhost:3000",
   "private": true,
   "dependencies": {
     "@splidejs/react-splide": "^0.7.8",
