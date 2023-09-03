@@ -22,7 +22,7 @@ class Header extends React.Component {
             <div>
                 <header>
                     <a href="/" className="logo">
-                        <h1>Garage@EEE</h1>
+                        <h1 style={{color: '#ffffff'}}>Garage@EEE</h1>
                     </a>
                     
                     <div id="menu-icon-container" className={this.state.menuIsActive ? "change" : null}>
