@@ -17,6 +17,7 @@
 
 import React from "react";
 
+
 import "./Gallery.css";
 import CarouselItem from "../tile/Tile";
 

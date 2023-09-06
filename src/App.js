@@ -1,5 +1,4 @@
 import {
-  HashRouter,
   Routes,
   Route,
   BrowserRouter,
@@ -15,17 +14,17 @@ import NotFound from "./routes/not-found/NotFound";
 
 function App() {
   return (
-  
-    <Routes>
-      <Route exact path="/" element={<Home />} />
-      <Route path="/ambassadors/:id" element={<AmbassadorDetail />} />
-      <Route path="/events" element={<Events />} />
-      <Route path="/events/:id" element={<EventDetail />} />
-      <Route path="/projects" element={<Project />} />
-      <Route path="/projects/:id" element={<ProjectDetail />} />
-      <Route path="/*" element={<NotFound />}/>
-    </Routes>
-    
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/ambassadors/:id" element={<AmbassadorDetail />} />
+          <Route path="/events" element={<Events />} />
+          <Route path="/events/:id" element={<EventDetail />} />
+          <Route path="/projects" element={<Project />} />
+          <Route path="/projects/:id" element={<ProjectDetail />} />
+          <Route path="/*" element={<NotFound />}/>
+        </Routes>
+      </BrowserRouter>
   );
 }
 

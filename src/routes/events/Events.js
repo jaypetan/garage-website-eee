@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
@@ -48,13 +49,17 @@ class Events extends React.Component{
                                 slug: "events"
                             }}/>
                             <br/>
+                            <Link className="back-button-a" to="/">
+                                <button className="back-button">
+                                    Back
+                                </button>
+                            </Link>
+                            <br/>
                         </div>
-                        
-                        {/* put your code above */}
-                        
-
+                        <br/>
                     </div>
                 }   
+                
                 </main>
                 <br/>
                 {this.state.isLoading === false ? <Footer/> : <p></p>}

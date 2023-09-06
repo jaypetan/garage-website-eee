@@ -33,16 +33,16 @@ class Footer extends React.Component {
                     </p>
                     <div className="media-buttons">
                         {/* links are just mock ups */}
-                        <a className="facebook" href="https://www.facebook.com/GARAGEATEEE/">
+                        <a className="facebook" href="https://www.facebook.com/GARAGEATEEE/" target="_blank" rel="noreferrer">
                             <img src={facebook} alt="garage facebook link" />
                         </a>
-                        <a className="linkedin" href="https://www.linkedin.com/company/garage-eee/">
+                        <a className="linkedin" href="https://www.linkedin.com/company/garage-eee/" target="_blank" rel="noreferrer">
                             <img src={linkedin} alt="garage linkedin link" />
                         </a>
-                        <a className="instagram" href="https://www.instagram.com/garage_at_eee/">
+                        <a className="instagram" href="https://www.instagram.com/garage_at_eee/" target="_blank" rel="noreferrer">
                             <img src={instagram} alt="garage instagram link" />
                         </a>
-                        <a className="github" href="https://github.com/Garage-at-EEE">
+                        <a className="github" href="https://github.com/Garage-at-EEE" target="_blank" rel="noreferrer">
                             <img src={github} alt="garage github link" />
                         </a>
                     </div>

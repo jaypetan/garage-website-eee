@@ -1,8 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import "./Header.css";
 
 import wondering from "../../img/wondering.png"
+import logo from "../../icons/garage-white.png";
 
 class Header extends React.Component {
     constructor() {
@@ -21,9 +23,9 @@ class Header extends React.Component {
         return(
             <div>
                 <header>
-                    <a href="/" className="logo">
-                        <h1 style={{color: '#ffffff'}}>Garage@EEE</h1>
-                    </a>
+                    <Link to="/" className="logo">
+                        <img src={logo} alt="Garage@EEE"/>
+                    </Link>
                     
                     <div id="menu-icon-container" className={this.state.menuIsActive ? "change" : null}>
                         <div onClick={this.handleClick}>
@@ -35,11 +37,11 @@ class Header extends React.Component {
                 </header>
                 <div id="menu" style={{right: `${this.state.menuIsActive ? "0px" : "-300px"}`}}>
                     {/* insert hyperlinks below */}
-                    <a href="/"><h3>Home</h3></a>
+                    <Link to="/"><h3>Home</h3></Link>
                     <hr/>
-                    <a href="/events"><h3>Events</h3></a>
+                    <Link to="/events"><h3>Events</h3></Link>
                     <hr/>
-                    <a href="/projects"><h3>Projects</h3></a>
+                    <Link to="/projects"><h3>Projects</h3></Link>
                     <hr/>
                     <img src={wondering} alt="" className="wondering-img"/>
                 </div>

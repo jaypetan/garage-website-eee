@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
@@ -40,7 +41,18 @@ class Project extends React.Component{
                     <div className="projects-page">
                         {/* put your code below */}
                         <div className="project-contents" data-aos="fade-up">
-                            <h1 className="project-heading">Projects</h1>
+                            <span className="header-wrapper">
+                                <h1 className="project-heading">Projects</h1>
+                                {window.innerWidth > 900 ? 
+                                <button className="upper-back-button">
+                                    Back
+                                </button>
+                                :
+                                <p></p>
+                            
+                            }
+                                
+                            </span>
                             <br/>
                             <Gallery data = {{
                                 content: this.state.data,
@@ -48,10 +60,16 @@ class Project extends React.Component{
                                 slug: "projects"
                             }}/>
                             <br/>
+                            <Link className="back-button-a" to="/">
+                                <button className="back-button">
+                                    Back
+                                </button>
+                            </Link>
+                            <br/>
                         </div>
-                        
+                        <br/>
                         {/* put your code above */}
-
+                        <br/>
                     </div>
                 }   
                 </main>

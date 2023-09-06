@@ -1,11 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import Carousel from "../../components/carousel/Carousel"
 import Loading from "../../components/loading/Loading";
-
-import { getData } from "../../data";
 
 import "./Home.css";
 import AOS from "aos";
@@ -14,9 +13,8 @@ import "aos/dist/aos.css";
 class Home extends React.Component{
     constructor() {
         super();
-        let mockData = getData();
         this.state = {
-            data: mockData,
+            data: {},
             isLoading: true,
         };
     };
@@ -90,7 +88,7 @@ class Home extends React.Component{
                                 <br/>
 
                                 <br/>
-                                <a href={this.state.data.InnovatorRegistration[0].regIsOpen ? this.state.data.InnovatorRegistration[0].regLink : "#"} className="reg-link" target="_blank">
+                                <a href={this.state.data.InnovatorRegistration[0].regIsOpen ? this.state.data.InnovatorRegistration[0].regLink : "#"} className="reg-link" target="_blank" rel="noreferrer">
                                     <button className="btn">
                                         {this.state.data.InnovatorRegistration[0].regIsOpen ? "Register" : "Registration Closed"}
                                     </button>  
@@ -111,12 +109,12 @@ class Home extends React.Component{
                                 }}/>
                             </div>
                             <br/>
-                            <a className="view-all-a" href={this.host}>
+                            <Link className="view-all-a" to="/projects">
                                 <button className="view-all">
                                     View All
                                 </button>
-                            </a>
-                            
+                            </Link>
+                            <br/>
                         </section>
                     </div>
                     <div className="section-wrapper events-wrapper">
@@ -131,11 +129,12 @@ class Home extends React.Component{
                                     }}/>
                             </div>
                             <br/>
-                            <a className="view-all-a" href={"/events"}>
+                            <Link className="view-all-a" to="/events">
                                 <button className="view-all">
                                     View All
                                 </button>
-                            </a>
+                            </Link>
+                            <br/>
                         </section>
                         <div className="section-transpararant-cover"></div>
                     </div>

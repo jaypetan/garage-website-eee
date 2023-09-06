@@ -16,31 +16,10 @@
 .card {
     text-decoration: none;
     color: black;
+    border: 0px;
+    border-radius: 5vw;
 }
 
 .card-body{
     padding: 0px;
-}
-
-.card-title{
-    margin: 0px;
-}
-
-.card-title-wrapper{
-    padding: 0px;
-}
-
-.card-img{
-    height: 30vh;
-    object-fit: cover
-}
-
-.prev-button{
-    position: absolute;
-    left: -50px;
-}
-
-.right-button{
-    position: absolute;
-    right: -50px;
 }

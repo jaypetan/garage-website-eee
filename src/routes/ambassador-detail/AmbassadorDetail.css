@@ -1,0 +1,60 @@
+.detail-main {
+    margin: 0px 30px 50px 30px;
+}
+
+.detail-header{
+    font-size: 12vw;
+    line-height: 1;
+    margin-top: 3vw;
+}
+
+.article{
+    font-size: 4vw;
+    line-height: 1.4;
+    margin: 1px;
+    white-space: pre-wrap;
+}
+
+/* Wide screen styling */
+@media (min-width:851px) {
+    .main-wrapper {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    .detail-header{
+        font-size: 5vw;
+    }
+
+    .article{
+        font-size: 1.4vw;
+        line-height: 1.5;
+    }
+}
+
+@media (min-width:441px) and (max-width: 900px) {
+    .main-wrapper {
+        width: 65%;
+        margin: 0 auto;
+    }
+
+    .detail-header{
+        font-size: 10vw;
+    }
+
+    .article{
+        font-size: 2.5vw;
+        line-height: 1.4;
+    }
+}
+
+.display-image {
+    border-radius: 5vw;
+    width: 100%;
+}
+
+.video {
+    border-radius: 5vw;
+    margin-bottom: 20px;
+    width: 100%;
+}

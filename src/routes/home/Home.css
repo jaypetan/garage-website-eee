@@ -220,6 +220,7 @@ Footer {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
+    margin-top: 10px;
 }
 
 .btn p, .view-all p {
@@ -237,6 +238,7 @@ Footer {
     background-color: #d2d1d100;
     position: absolute;
     left: calc(50% - 7.2rem);
+    color: black;
 }
 
 .view-all:hover {

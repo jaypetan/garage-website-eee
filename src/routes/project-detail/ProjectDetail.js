@@ -5,6 +5,7 @@ import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import LinkPreview from "../../components/link-preview/LinkPreview";
 import Loading from "../../components/loading/Loading";
+import ImageGallery from "../../components/image-gallery/ImageGallery";
 
 import "./ProjectDetail.css";
 import AOS from "aos";
@@ -67,6 +68,14 @@ function ProjectDetail(){
                         :
                         <p></p>
                         }
+                        {state.contentImages ?
+                            <ImageGallery images={state.contentImages}/>
+                        :
+                            <p></p>
+                        }
+                        
+                        
+
                         <br/>
                         <br/>
                         <br/>

@@ -35,3 +35,60 @@
         padding: 0px, 10em;
     }
 }
+
+.btn p, .back-button p {
+    margin: 0
+}
+
+.back-button {
+    transition: 0.2s;
+    width: 14.4rem;
+    height: 3.5rem;
+    border-radius: 50rem;
+    border-width: 0.2rem;
+    border-color: black;
+    margin: auto;
+    background-color: black;
+    position: absolute;
+    left: calc(50% - 7.2rem);
+    color: white;
+    margin-bottom: 30px;
+}
+
+.back-button:hover {
+    background-color: #d2d1d100;
+    color: black;
+}
+
+.back-button:active {
+    background-color: #c7c7c7;
+}
+
+.upper-back-button {
+    transition: 0.2s;
+    width: 8rem;
+    height: 3rem;
+    border-radius: 50rem;
+    border-width: 0.2rem;
+    border-color: black;
+    margin-left: 20px;
+    margin-top: 3vw;
+    background-color: black;
+    color: white;
+}
+
+.upper-back-button:hover {
+    background-color: #d2d1d100;
+    color: black;
+}
+
+.upper-back-button:active {
+    background-color: #c7c7c7;
+}
+
+.header-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}

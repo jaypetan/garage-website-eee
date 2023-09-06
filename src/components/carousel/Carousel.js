@@ -1,5 +1,6 @@
 import React from "react"
-import { Splide, SplideSlide } from "@splidejs/react-splide"
+import { Link } from "react-router-dom";
+import { Splide, SplideSlide, SplideTrack} from "@splidejs/react-splide"
 import useWindowDimensions from "../../hooks/useWindowDimensions"; 
 import './Carousel.css'
 import '@splidejs/react-splide/css';
@@ -27,30 +28,35 @@ function Carousel(props) {
         //imgSrc = "https://drive.google.com/uc?export=view&id=" + imgSrc.substring(31, imgSrc.length)
         
         tilesRenderList.push(
+    
             <SplideSlide key={i}>
-                <a href={props.data.slug + "/" + content.pk} className="card h-100 border-0 rounded-5">
+                <Link to={props.data.slug + "/" + content.pk} className="card h-100 border-0 rounded-5">
                     <img src={imgSrc} className="card-img-top card-img" alt="..."/>
                     <div className="card-body p-4 card-title-wrapper">
                         <div className="h3 position-relative top-50 start-50 translate-middle card-title">
                             { content.name }
                         </div>
                     </div>
-                </a>
+                </Link>
             </SplideSlide>
         )
     }
 
     return(
         <div className="carousel">
-            <Splide aria-label="a carousel"
+            <Splide hasTrack={ false } aria-label="a carousel"
                 options={{
                     type: 'loop',
                     perPage: SplidePageNum(width),
                     perMove: 1,
-                    gap: "3rem"
+                    gap: "3rem",
+                    autoplay: true
                 }}>
-                { tilesRenderList }
+                <SplideTrack>
+                    { tilesRenderList }
+                </SplideTrack>
             </Splide>
+            
         </div>
     )
 }
