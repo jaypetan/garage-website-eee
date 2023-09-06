@@ -1,6 +1,5 @@
 // by brandon 6/9/2022
 import React from 'react';
-import { Link } from "react-router-dom";
 import './Tile.css'
 
 function CarouselItem(props) {
@@ -27,14 +26,14 @@ function CarouselItem(props) {
         </h3>
 
     return(
-        <Link to={ link } className="col-6 col-lg-4" style={{textDecoration:"none"}}>
+        <a href={ link } className="col-6 col-lg-4" style={{textDecoration:"none"}}>
             <div key={content.pk} className="item-container" style={backgroundImage}>
                 <div className='title-container'>
                     { content.name && titlePosition === "botIn" && itemHeadingTop }
                 </div>
             </div>
             { content.name && titlePosition === "botOut" && itemHeadingBot }
-        </Link>
+        </a>
     );
 
 }

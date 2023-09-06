@@ -1,6 +1,6 @@
 .carousel {
     width: 100%;
-    margin: 0px 0px 20px 0px;
+    margin: 0px;
 }
 
 .square-fit {
@@ -33,14 +33,4 @@
 .card-img{
     height: 30vh;
     object-fit: cover
-}
-
-.prev-button{
-    position: absolute;
-    left: -50px;
-}
-
-.right-button{
-    position: absolute;
-    right: -50px;
 }

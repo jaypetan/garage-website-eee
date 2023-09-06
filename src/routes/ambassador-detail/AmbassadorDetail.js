@@ -7,7 +7,7 @@ import Loading from "../../components/loading/Loading";
 
 import "./AmbassadorDetail.css";
 import AOS from "aos";
-import "aos/dist/aos.css";
+
 
 function AmbassadorDetail(){
     const params = useParams()
@@ -53,7 +53,9 @@ function AmbassadorDetail(){
                         <br/>
                         <p className="article">{state.desc}</p>
                         <br/>
-
+                        <p></p>
+                        <br/>
+                        <br/>
                         <br/>
                         {/* put your code above */}
                         </div>

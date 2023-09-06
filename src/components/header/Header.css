@@ -16,20 +16,6 @@ header {
   align-items: center;
   text-decoration: none;
   color: white;
-  margin-left: 10px;
-}
-
-.logo img {
-  height: 65px;
-}
-
-@media only screen and (max-width: 600px) {
-  .logo {
-    margin-left: 0px;
-  }
-  .logo img {
-    height: 45px;
-  }
 }
 
 header div button {
@@ -92,7 +78,7 @@ header div button {
 }
 
 #menu a h3 {
-    margin: 20px 0px;
+    margin: 0px;
     padding: 0px;
     color: white;
     line-height: normal;
