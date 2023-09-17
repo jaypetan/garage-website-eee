@@ -1,7 +1,7 @@
 import {
   Routes,
   Route,
-  BrowserRouter,
+  HashRouter,
 } from "react-router-dom";
 
 import Home from "./routes/home/Home";
@@ -14,7 +14,7 @@ import NotFound from "./routes/not-found/NotFound";
 
 function App() {
   return (
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/ambassadors/:id" element={<AmbassadorDetail />} />
@@ -24,7 +24,7 @@ function App() {
           <Route path="/projects/:id" element={<ProjectDetail />} />
           <Route path="/*" element={<NotFound />}/>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
   );
 }
 
