@@ -5,7 +5,6 @@
 
 #home {
     scroll-snap-type: y mandatory;
-    overflow-y: scroll;
     max-height: 100vh;
     scroll-padding-top: 100px;
 }
