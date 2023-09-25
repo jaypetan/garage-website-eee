@@ -33,10 +33,8 @@ class Home extends React.Component {
   }
 
   render() {
-    const { isLoading } = this.state;
-    const homeStyles = isLoading ? { overflowY: "hidden" } : {};
     return (
-      <div id="home" style={homeStyles}>
+      <div id="home">
         <Header />
         <main>
           {this.state.isLoading === true ? (
