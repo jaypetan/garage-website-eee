@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
-import Carousel from "../../components/carousel/Carousel";
 import Loading from "../../components/loading/Loading";
 
 import "./Home.css";
