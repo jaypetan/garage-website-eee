@@ -1,0 +1,35 @@
+/* Card Styles */
+.card {
+  overflow: hidden;
+  border-radius: 0.8rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.5s;
+  position: relative;
+}
+
+.card-image {
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  padding-top: 100%;
+  transition: transform 0.3s;
+}
+
+.text-overlay {
+  position: absolute;
+  top: 0.2rem; /* Adjust as needed to position the text */
+  left: 0.2rem; /* Adjust as needed to position the text */
+  color: black; /* Text color */
+  font-size: 1.5rem; /* Font size */
+  padding: 0.1rem 0.2rem;
+  z-index: 1; /* Ensure the text appears on top of the image */
+}
+
+/* Hover Effect */
+.card:hover .card-image {
+  transform: scale(1.05);
+}
+
+.card:hover {
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+}
