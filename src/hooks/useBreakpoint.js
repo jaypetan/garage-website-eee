@@ -7,9 +7,9 @@ function useBreakpoint() {
     const handleResize = () => {
       const width = window.innerWidth;
 
-      if (width >= 1024) {
+      if (width >= 1200) {
         setBreakpoint("desktop");
-      } else if (width >= 768) {
+      } else if (width >= 640) {
         setBreakpoint("tablet");
       } else {
         setBreakpoint("mobile");
