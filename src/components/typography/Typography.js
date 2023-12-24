@@ -5,9 +5,9 @@ import useBreakpoint from "../../hooks/useBreakpoint";
 const Typography = ({ variant, children }) => {
   const breakpoint = useBreakpoint();
   const typography = typographyConfig[breakpoint] || {};
-  const { fontSize, lineHeight } = typography[variant] || {};
+  const { fontSize, lineHeight, fontWeight } = typography[variant] || {};
 
-  return <p style={{ fontSize, lineHeight }}>{children}</p>;
+  return <p style={{ fontSize, lineHeight, fontWeight }}>{children}</p>;
 };
 
 export default Typography;
