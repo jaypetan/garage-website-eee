@@ -1,6 +1,7 @@
 /* OVERALL STYLING */
 * {
   box-sizing: border-box;
+  scrollbar-color: var(--table-disabled) var(--background)
 }
 
 html {
@@ -25,6 +26,15 @@ body {
   --error: #E10D0D;
   --table-disabled: #A3B4CC;
   --table-accent: #E5F1FF;
+
+  --max-width: 1440px;
+  --min-width: 480px;
+  --gutter: 24px;
+  --content-gap-desktop: 100px;
+  --content-gap-tablet: 60px;
+  --content-gap-mobile: 40px;
+  --top-padding: 60px;
+  --top-padding-mobile: 40px;
 }
 
 a {
