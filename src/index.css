@@ -28,7 +28,7 @@ body {
   --table-accent: #E5F1FF;
 
   --max-width: 1440px;
-  --min-width: 480px;
+  --header-height: 100px;
   --gutter: 24px;
   --content-gap-desktop: 100px;
   --content-gap-tablet: 60px;
