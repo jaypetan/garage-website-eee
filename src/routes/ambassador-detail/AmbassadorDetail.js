@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import Loading from "../../components/loading/Loading";
+import BackButton from "../../components/back-button/BackButton";
 
 import "./AmbassadorDetail.css";
 import AOS from "aos";
@@ -54,10 +55,7 @@ function AmbassadorDetail() {
             {/* put your code below */}
             <div className="detail-header-box">
               <p className="detail-header">{state.name} </p>
-              <button className="detail-header-button">
-                <div className="detail-header-button-chevron-left">&#x2C2;</div>
-                <div className="detail-header-button-back">Back</div>
-              </button>
+              <BackButton />
             </div>
 
             <img
