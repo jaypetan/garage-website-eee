@@ -1,0 +1,94 @@
+.projects-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 14vh;
+}
+
+.project-contents {
+    width: 60%;
+    margin-bottom: 5vw;
+}
+
+.project-heading {
+    font-size: 10vw;
+    padding: 0px, 10em;
+    margin-top: 10px;
+}
+
+@media (max-width: 500px) {
+    .project-contents {
+        width: 80%;
+    }
+}
+
+@media (min-width:501px) and (max-width: 700px) {
+    .project-contents {
+        width: 70%;
+    }
+}
+
+@media (max-width: 900px) {
+    .project-heading {
+        font-size: 15vw;
+        padding: 0px, 10em;
+    }
+}
+
+.btn p, .back-button p {
+    margin: 0
+}
+
+.back-button {
+    transition: 0.2s;
+    width: 14.4rem;
+    height: 3.5rem;
+    border-radius: 50rem;
+    border-width: 0.2rem;
+    border-color: black;
+    margin: auto;
+    background-color: black;
+    position: absolute;
+    left: calc(50% - 7.2rem);
+    color: white;
+    margin-bottom: 30px;
+}
+
+.back-button:hover {
+    background-color: #d2d1d100;
+    color: black;
+}
+
+.back-button:active {
+    background-color: #c7c7c7;
+}
+
+.upper-back-button {
+    transition: 0.2s;
+    width: 8rem;
+    height: 3rem;
+    border-radius: 50rem;
+    border-width: 0.2rem;
+    border-color: black;
+    margin-left: 20px;
+    margin-top: 3vw;
+    background-color: black;
+    color: white;
+}
+
+.upper-back-button:hover {
+    background-color: #d2d1d100;
+    color: black;
+}
+
+.upper-back-button:active {
+    background-color: #c7c7c7;
+}
+
+.header-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}

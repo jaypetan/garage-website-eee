@@ -1,0 +1,9 @@
+/* by brandon 6/9/2022 */
+.row, .col-4 {
+    padding: 0;
+}
+
+.row {
+    justify-content: flex-start;
+}
+/* modification ends */

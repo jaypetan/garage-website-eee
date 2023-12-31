@@ -1,0 +1,46 @@
+.carousel {
+    width: 100%;
+    margin: 0px 0px 20px 0px;
+}
+
+.square-fit {
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+.card-img-top {
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+}
+
+.card {
+    text-decoration: none;
+    color: black;
+}
+
+.card-body{
+    padding: 0px;
+}
+
+.card-title{
+    margin: 0px;
+}
+
+.card-title-wrapper{
+    padding: 0px;
+}
+
+.card-img{
+    height: 30vh;
+    object-fit: cover
+}
+
+.prev-button{
+    position: absolute;
+    left: -50px;
+}
+
+.right-button{
+    position: absolute;
+    right: -50px;
+}
