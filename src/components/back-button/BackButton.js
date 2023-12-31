@@ -11,12 +11,9 @@ const BackButton = () => {
   return (
     <div className="detail-back-button">
       <button className="detail-header-button" onClick={goBack}>
-        <div className="detail-header-button-info">
-          <div className="detail-header-button-chevron-left">
-            <img src={chevronLeft} alt="back-button" />
-          </div>
-          <div className="detail-header-button-back">Back</div>
-        </div>
+        <img src={chevronLeft} alt="back-button" />
+
+        <div className="detail-header-button-back">Back</div>
       </button>
     </div>
   );
