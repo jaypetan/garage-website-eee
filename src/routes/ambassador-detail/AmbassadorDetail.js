@@ -5,6 +5,7 @@ import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import Loading from "../../components/loading/Loading";
 import BackButton from "../../components/back-button/BackButton";
+import Typography from "../../components/typography/Typography";
 
 import "./AmbassadorDetail.css";
 import AOS from "aos";
@@ -54,7 +55,7 @@ function AmbassadorDetail() {
           <div className="main-wrapper" data-aos="fade-up">
             {/* put your code below */}
             <div className="detail-header-box">
-              <p className="detail-header">{state.name} </p>
+              <Typography variant="heading">{state.name}</Typography>
               <BackButton />
             </div>
 
