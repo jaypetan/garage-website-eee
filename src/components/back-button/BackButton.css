@@ -1,7 +1,7 @@
 .detail-header-button{
   display: flex;
   align-items: center;
-  border-radius: 20px;
+  border-radius: 50px;
   border: 3px solid black;
   margin-top: 20px;
   padding: 8px 16px 8px 8px;
@@ -16,9 +16,6 @@
   color: #1A1A1A;
 }
 
-.detail-back-button img{
-  width: 1rem;
-}
 
 .detail-back-button button{
   display: flex;

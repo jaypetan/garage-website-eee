@@ -65,7 +65,8 @@ function AmbassadorDetail() {
               alt={"image of '" + state.name + "'"}
             ></img>
             <br />
-            <p className="article">{state.desc}</p>
+            <Typography variant="body">{state.desc}</Typography>
+
             <br />
 
             <br />
