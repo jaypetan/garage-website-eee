@@ -17,11 +17,12 @@
 .ambassador-page .detail-header-box{
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: end;
     justify-content: space-between;
     height: 140px;
     width: 100%;
     gap: 24px;
+    margin: 0 0 40px 0;
 }
 
 .ambassador-page .detail-header {
