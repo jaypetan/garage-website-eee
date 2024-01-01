@@ -31,14 +31,11 @@
 
 .text-overlay {
   position: absolute;
-  top: 0.2rem; /* Adjust as needed to position the text */
-  left: 0.2rem; /* Adjust as needed to position the text */
-  color: black; /* Text color */
-  font-size: 1.5rem; /* Font size */
-  padding: 0.1rem 1rem;
+  top: 20px; /* Adjust as needed to position the text */
+  left: 23px; /* Adjust as needed to position the text */
+  color: var(--body); /* Text color */
   z-index: 1; /* Ensure the text appears on top of the image */
-  max-width: 75%;
-  z-index: 1; /* Ensure the text appears on top of the image */
+  max-width: 50%;
 }
 
 /* Hover Effect */

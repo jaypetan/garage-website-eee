@@ -50,7 +50,7 @@ class Home extends React.Component {
     return (
       <>
         <Header />
-        <main>
+        <main className="home-page">
           {this.state.isLoading === true ? (
             <Loading />
           ) : (
@@ -123,7 +123,7 @@ class Home extends React.Component {
                         impactful makerspace.
                       </Typography>
                     </div>
-                    <div style={{ width: "100%" }}>
+                    <div className="grid-wrapper">
                       <Grid columns={3}>
                         {this.state.data.Ambassador.map((card, index) => (
                           <div key={index}>
@@ -183,18 +183,28 @@ class Home extends React.Component {
                         </div>
                         <a
                           href={
-                            this.state.data.InnovatorRegistration[0].regIsOpen
-                              ? this.state.data.InnovatorRegistration[0].regLink
-                              : "#"
+                            this.state.data.InnovatorRegistration[0]
+                              .regIsOpen &&
+                            this.state.data.InnovatorRegistration[0].regLink
                           }
-                          className="reg-link"
                           target="_blank"
                           rel="noreferrer"
                         >
-                          <button className="btn">
-                            {this.state.data.InnovatorRegistration[0].regIsOpen
-                              ? "Register"
-                              : "Registration Closed"}
+                          <button
+                            className={[
+                              !this.state.data.InnovatorRegistration[0]
+                                .regIsOpen
+                                ? "disabled"
+                                : "outline",
+                              "site-button",
+                            ].join(" ")}
+                          >
+                            <Typography variant={"body"}>
+                              {this.state.data.InnovatorRegistration[0]
+                                .regIsOpen
+                                ? "Register"
+                                : "Registration Closed"}
+                            </Typography>
                           </button>
                         </a>
                       </div>
@@ -204,7 +214,7 @@ class Home extends React.Component {
                     <Typography variant={"heading"}>
                       PROJECT SHOWCASE
                     </Typography>
-                    <div style={{ width: "100%" }}>
+                    <div className="grid-wrapper">
                       <Grid columns={3}>
                         {this.state.data.Project.map((card, index) => (
                           <div className="card-wrapper" key={index}>
@@ -218,14 +228,16 @@ class Home extends React.Component {
                           </div>
                         ))}
                       </Grid>
+                      <Link to="/projects" className="link-view-more">
+                        <button className="site-button outline">
+                          <Typography variant={"body"}>View More</Typography>
+                        </button>
+                      </Link>
                     </div>
-                    <Link className="view-all-a" to="/projects">
-                      <button className="view-all">View All</button>
-                    </Link>
                   </section>
                   <section className="flagship-events section-wrapper">
                     <Typography variant={"heading"}>OUR EVENTS</Typography>
-                    <div style={{ width: "100%" }}>
+                    <div className="grid-wrapper">
                       <Grid columns={3}>
                         {this.state.data.Event.map((card, index) => (
                           <div className="card-wrapper" key={index}>
@@ -239,17 +251,12 @@ class Home extends React.Component {
                           </div>
                         ))}
                       </Grid>
-                      {/* <Carousel
-                      className="home-carousel"
-                      data={{
-                        content: this.state.data.Project,
-                        slug: "projects",
-                      }}
-                    /> */}
+                      <Link to="/events" className="link-view-more">
+                        <button className="site-button outline">
+                          <Typography variant="body">View More</Typography>
+                        </button>
+                      </Link>
                     </div>
-                    <Link className="view-all-a" to="/events">
-                      <button className="view-all">View All</button>
-                    </Link>
                   </section>
                 </div>
               </div>

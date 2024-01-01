@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom"; // Import Link from React Router
 import styles from "./PhotoCard.module.css";
+import Typography from "../typography/Typography";
 
 const Card = ({ image, text, to }) => {
   console.log(to);
@@ -11,7 +12,7 @@ const Card = ({ image, text, to }) => {
         style={{ backgroundImage: `url(${image})` }}
       ></div>
       <div className={styles["text-overlay"]}>
-        <p>{text}</p>
+        <Typography variant={"body"}>{text}</Typography>
       </div>
     </div>
   );
