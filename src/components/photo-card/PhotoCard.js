@@ -7,10 +7,7 @@ const Card = ({ image, text, to }) => {
   console.log(to);
   const cardContent = (
     <div className={styles.card}>
-      <div
-        className={styles["card-image"]}
-        style={{ backgroundImage: `url(${image})` }}
-      ></div>
+      <img className={styles["card-image"]} loading="lazy" src={image} />
       <div className={styles["text-overlay"]}>
         <Typography variant={"body"}>{text}</Typography>
       </div>

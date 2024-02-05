@@ -1,16 +1,16 @@
 /* Card Styles */
 .card {
   overflow: hidden;
-  border-radius: 0.8rem;
+  border-radius: 2rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.5s;
   background: white;
   position: relative;
+  aspect-ratio: 1;
 }
 
 .card-image {
-  background-size: cover;
-  background-position: center;
+  object-fit: cover;
   width: 100%;
   padding-top: 100%;
   transition: transform 0.3s;

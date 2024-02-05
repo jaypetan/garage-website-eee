@@ -57,21 +57,19 @@ class Home extends React.Component {
             <>
               <div className="gutter">
                 <div className="content-wrapper">
-                  <div className="banner-wrapper">
-                    <div className="banner">
-                      <div className="banner-space">
-                        <Typography variant="banner">
-                          STUDENT LED <br />
-                          MAKERSPACE
+                  <div className="banner">
+                    <div className="banner-space">
+                      <Typography variant="banner">
+                        STUDENT LED <br />
+                        MAKERSPACE
+                      </Typography>
+                      <div className="scroll-more">
+                        <Typography variant="body" padding-bottom="0.75rem">
+                          Scroll to find out more
                         </Typography>
-                        <div className="scroll-more">
-                          <Typography variant="body" padding-bottom="0.75rem">
-                            Scroll to find out more
-                          </Typography>
-                        </div>
                       </div>
-                      <div className="banner-image"></div>
                     </div>
+                    <div className="banner-image"></div>
                   </div>
                   <section className="section-wrapper">
                     {/* Intro section */}

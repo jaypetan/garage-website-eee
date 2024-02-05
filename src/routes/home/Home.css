@@ -6,7 +6,8 @@
 .gutter {
     padding-left: var(--gutter);
     padding-right: var(--gutter);
-    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
 }
   
 .content-wrapper {
@@ -26,6 +27,7 @@
 
 .banner {
   height: calc(100vh - var(--top-padding));
+  min-height: 1024px;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -41,16 +43,14 @@
 }
 
 .banner-image {
-  display: flex;
-  justify-content: space-between; /* Elements at opposite ends with space in between */
-  align-items: flex-end;
   background-image: url(../../img/banner.jpeg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  border-radius: 0.8em;
+  border-radius: 2rem;
   width: 100%; /* Adjust the width of the container as needed */
   height: 100%;
+  min-height: 640px;
 }
 
 .innovators-text {
@@ -103,11 +103,9 @@
   .section-wrapper {
     row-gap: var(--content-gap-tablet);
   }
-  .banner-image {
-    height: 40vh;
-  }
   .banner {
     height: auto;
+    min-height: unset;
   }
   .content-wrapper {
     row-gap: 180px;
@@ -125,5 +123,8 @@
   .content-wrapper {
     row-gap: 90px;
     padding-bottom: 90px;
+  }
+  .banner-image {
+    min-height: 320px;
   }
 }
