@@ -11,6 +11,7 @@ import "aos/dist/aos.css";
 import Grid from "../../components/grid/Grid";
 import Card from "../../components/photo-card/PhotoCard";
 import Typography from "../../components/typography/Typography";
+import Gutter from "../../components/gutter/Gutter";
 
 class Home extends React.Component {
   constructor() {
@@ -55,7 +56,7 @@ class Home extends React.Component {
             <Loading />
           ) : (
             <>
-              <div className="gutter">
+              <Gutter>
                 <div className="content-wrapper">
                   <div className="banner">
                     <div className="banner-space">
@@ -257,7 +258,7 @@ class Home extends React.Component {
                     </div>
                   </section>
                 </div>
-              </div>
+              </Gutter>
               <Footer />
             </>
           )}
