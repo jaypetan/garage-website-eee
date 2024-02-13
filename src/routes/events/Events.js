@@ -62,7 +62,9 @@ class Events extends React.Component{
                                 </button>
                             </Link>
                         </div>
-                        </div>
+                    </div>
+                    <br/>
+                    <br/>
                     <br/>
                     </main>
                     )}
