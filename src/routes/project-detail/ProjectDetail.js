@@ -93,8 +93,6 @@ function ProjectDetail(){
                             }
                         </div>
                         </div>
-
-                        <br/>
                         <br/>
                         <br/>
                         {/* put your code above */}

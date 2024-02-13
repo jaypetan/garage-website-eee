@@ -5,6 +5,7 @@ import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import Gallery from "../../components/gallery/Gallery";
 import Loading from "../../components/loading/Loading";
+import Typography from "../../components/typography/Typography";
 
 import "./Project.css";
 import AOS from "aos";
@@ -31,52 +32,48 @@ class Project extends React.Component{
         });
         window.addEventListener('load', AOS.refresh);
     }
-
+    
     render() {
         return(
-            <div>
+            <div className="projects-page">
                 <Header/>
-                <main>
-                    {this.state.isLoading === true ? <Loading/> :
-                    <div className="projects-page">
-                        {/* put your code below */}
-                        <div className="project-contents" data-aos="fade-up">
-                            <span className="header-wrapper">
-                                <h1 className="project-heading">Projects</h1>
-                                {window.innerWidth > 900 ? 
-                                <button className="upper-back-button">
-                                    Back
+                    {this.state.isLoading === true ? (<Loading/> ):(
+                    <main className="project-main">
+                        <div className="project-contents" data-aos= "fade-ep">
+                        <div className="header-wrapper">
+                            <Typography variant="heading">Projects</Typography>
+                            <Link className="upper-back-botton-a" to="/">
+                                <button className="upper-back-button"> 
+                                    Back  
                                 </button>
-                                :
-                                <p></p>
-                            
-                            }
-                                
-                            </span>
-                            <br/>
+                            </Link>
+                        </div>
+                        <div className="carousel-wrapper">
                             <Gallery data = {{
                                 content: this.state.data,
                                 titlePosition: "botOut",
                                 slug: "projects"
                             }}/>
-                            <br/>
-                            <Link className="back-button-a" to="/">
-                                <button className="back-button">
-                                    Back
+                        </div>
+                        <div className="back-botton-box">
+                            <Link to="/">
+                                <button className="back-button"> 
+                                    Back  
                                 </button>
                             </Link>
-                            <br/>
-                        </div>
-                        <br/>
-                        {/* put your code above */}
-                        <br/>
+                        </div>   
                     </div>
-                }   
-                </main>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    </main>
+                    )}
+                <br/>
                 {this.state.isLoading === false ? <Footer/> : <p></p>}
             </div>
-        );
-    };
-};
+        )
+    }
+}
 
 export default Project;

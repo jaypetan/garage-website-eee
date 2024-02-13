@@ -5,6 +5,7 @@ import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import Gallery from "../../components/gallery/Gallery";
 import Loading from "../../components/loading/Loading";
+import Typography from "../../components/typography/Typography";
 
 import "./Events.css";
 import AOS from "aos";
@@ -34,39 +35,42 @@ class Events extends React.Component{
 
     render() {
         return(
-            <div>
+            <div className="events-page">
                 <Header/>
-                <main>
-                    {this.state.isLoading === true ? <Loading/> :
-                    <div className="events-page">
-                        {/* put your code below */}
-                        <div className="event-contents" data-aos="fade-up">
-                            <h1 className="event-heading">Events</h1>
-                            <br/>
+                    {this.state.isLoading == true ? (<Loading/>) : (
+                    <main className="event-main">
+                        <div className="event-contents" data-aos = "fade-ep">
+                        <div className="event-header">
+                            <Typography variant={"heading"}>Events</Typography>
+                            <Link className="upper-back-botton-a" to="/">
+                                <button className="upper-back-button">
+                                    Back
+                                </button>
+                            </Link>
+                        </div>
+                        <div className="event-carousel">
                             <Gallery data = {{
                                 content: this.state.data,
-                                titlePosition: "botOut",
+                                titlePosititon: "botOut",
                                 slug: "events"
                             }}/>
-                            <br/>
-                            <Link className="back-button-a" to="/">
+                        </div>
+                        <div className="back-button-box">
+                            <Link to="/">
                                 <button className="back-button">
                                     Back
                                 </button>
                             </Link>
-                            <br/>
                         </div>
-                        <br/>
-                    </div>
-                }   
-                
-                </main>
+                        </div>
+                    <br/>
+                    </main>
+                    )}
                 <br/>
                 {this.state.isLoading === false ? <Footer/> : <p></p>}
-                
             </div>
-        );
-    };
-};
+        )
+    }
+}
 
 export default Events;
