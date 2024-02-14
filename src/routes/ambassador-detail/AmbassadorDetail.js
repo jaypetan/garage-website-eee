@@ -6,8 +6,10 @@ import Footer from "../../components/footer/Footer";
 import Loading from "../../components/loading/Loading";
 import BackButton from "../../components/back-button/BackButton";
 import Typography from "../../components/typography/Typography";
+import Gutter from "../../components/gutter/Gutter";
+import HeroImage from "../../components/heroImage/heroImage";
 
-import "./AmbassadorDetail.css";
+import styles from "./AmbassadorDetail.module.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -46,37 +48,24 @@ function AmbassadorDetail() {
   }, []);
 
   return (
-    <div className="ambassador-page">
+    // <main className="ambassador-page">
+    <>
       <Header />
       {isLoading === true ? (
         <Loading />
       ) : (
-        <main className="detail-main">
-          <div className="main-wrapper" data-aos="fade-up">
-            {/* put your code below */}
-            <div className="detail-header-box">
-              <Typography variant="heading">{state.name}</Typography>
-              <BackButton />
+        <>
+          <Gutter>
+            <div className={styles["main-wrapper"]} data-aos="fade-up">
+              <HeroImage heading={state.name} src={state.displayImageUrl} />
+              <Typography variant="body">{state.desc}</Typography>
             </div>
-
-            <img
-              src={state.displayImageUrl}
-              className="display-image"
-              alt={"image of '" + state.name + "'"}
-            ></img>
-            <br />
-            <Typography variant="body">{state.desc}</Typography>
-
-            <br />
-
-            <br />
-            {/* put your code above */}
-          </div>
-        </main>
+          </Gutter>
+          <Footer />
+        </>
       )}
-      <br />
-      {isLoading === false ? <Footer /> : <p></p>}
-    </div>
+    </>
+    // </main>
   );
 }
 

@@ -10,12 +10,10 @@ const BackButton = () => {
   };
 
   return (
-    <div className="detail-back-button">
-      <button className="detail-header-button" onClick={goBack}>
-        <img src={chevronLeft} alt="back-button" />
-        <Typography variant="body">Back</Typography>
-      </button>
-    </div>
+    <button className="detail-header-button" onClick={goBack}>
+      <img src={chevronLeft} alt="back-button" />
+      <Typography variant="body">Back</Typography>
+    </button>
   );
 };
 

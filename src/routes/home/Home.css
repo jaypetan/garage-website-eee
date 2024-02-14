@@ -27,7 +27,7 @@
 
 .banner {
   height: calc(100vh - var(--top-padding));
-  min-height: 1024px;
+  min-height: 760px;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
