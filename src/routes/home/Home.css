@@ -80,6 +80,7 @@
 .site-button {
   padding: 16px 64px;
   border-radius: 100px;
+  cursor: pointer;
 }
 
 .outline {
@@ -90,6 +91,7 @@
 
 .disabled {
   border: none;
+  cursor: default;
 }
 
 .disabled p {

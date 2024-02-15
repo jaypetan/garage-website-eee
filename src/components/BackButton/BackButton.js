@@ -1,7 +1,7 @@
 import "./BackButton.css";
 import { useNavigate } from "react-router-dom";
-import chevronLeft from "../../img/arrow_back_ios.svg";
-import Typography from "../typography/Typography";
+import chevronLeft from "../../icons/arrow_back_ios.svg";
+import Typography from "../Typography/Typography";
 
 const BackButton = () => {
   const navigate = useNavigate();

@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-import Header from "../../components/header/Header";
-import Footer from "../../components/footer/Footer";
-import Loading from "../../components/loading/Loading";
-import BackButton from "../../components/back-button/BackButton";
-import Typography from "../../components/typography/Typography";
-import Gutter from "../../components/gutter/Gutter";
-import HeroImage from "../../components/heroImage/heroImage";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
+import Loading from "../../components/Loading/Loading";
+import Typography from "../../components/Typography/Typography";
+import Gutter from "../../components/Gutter/Gutter";
+import HeroImage from "../../components/HeroImage/HeroImage";
 
 import styles from "./AmbassadorDetail.module.css";
 import AOS from "aos";

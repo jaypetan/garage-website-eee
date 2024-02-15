@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./Footer.css";
-import Typography from "../typography/Typography";
+import Typography from "../Typography/Typography";
 
 // import icons
 import linkedin from "../../icons/linkedin.png";

@@ -1,7 +1,7 @@
 import React from "react";
 
-import Typography from "../typography/Typography";
-import BackButton from "../back-button/BackButton";
+import Typography from "../Typography/Typography";
+import BackButton from "../BackButton/BackButton";
 import styles from "./heroImage.module.css";
 
 const HeroImage = ({ heading, src }) => {

@@ -1,0 +1,72 @@
+import React from "react";
+import { Link } from "react-router-dom";
+
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
+import Gallery from "../../components/Gallery/Gallery";
+import Loading from "../../components/Loading/Loading";
+
+import "./Events.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+class Events extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      data: {},
+      isLoading: true,
+    };
+  }
+
+  apiDomain = "https://ntueeegarage.pythonanywhere.com/api/";
+
+  componentDidMount() {
+    fetch(this.apiDomain + "events/")
+      .then((res) => res.json())
+      .then((data) => this.setState({ data: data, isLoading: false }))
+      .then(() => console.log(this.state));
+    AOS.init({
+      duration: 1500,
+    });
+    window.addEventListener("load", AOS.refresh);
+  }
+
+  render() {
+    return (
+      <div>
+        <Header />
+        <main>
+          {this.state.isLoading === true ? (
+            <Loading />
+          ) : (
+            <div className="events-page">
+              {/* put your code below */}
+              <div className="event-contents" data-aos="fade-up">
+                <h1 className="event-heading">Events</h1>
+                <br />
+                <Gallery
+                  data={{
+                    content: this.state.data,
+                    titlePosition: "botOut",
+                    slug: "events",
+                  }}
+                />
+                <br />
+                <Link className="back-button-a" to="/">
+                  <button className="back-button">Back</button>
+                </Link>
+                <br />
+              </div>
+              <br />
+            </div>
+          )}
+        </main>
+        <br />
+        {this.state.isLoading === false ? <Footer /> : <p></p>}
+      </div>
+    );
+  }
+}
+
+export default Events;

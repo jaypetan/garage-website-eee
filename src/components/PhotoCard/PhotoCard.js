@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom"; // Import Link from React Router
 import styles from "./PhotoCard.module.css";
-import Typography from "../typography/Typography";
+import Typography from "../Typography/Typography";
 
 const Card = ({ image, text, to }) => {
   console.log(to);
