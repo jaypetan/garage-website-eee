@@ -18,7 +18,7 @@
 import React from "react";
 
 import "./Gallery.css";
-import CarouselItem from "../Tile/Tile";
+import CarouselItem from "../tile/Tile";
 
 function Carousel(props) {
   const titlePosition = props.data.titlePosition;

@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer/Footer";
-import Carousel from "../../components/Carousel/Carousel";
-import Loading from "../../components/Loading/Loading";
+import Header from "../../components/header/Header";
+import Footer from "../../components/footer/Footer";
+import Carousel from "../../components/carousel/Carousel";
+import Loading from "../../components/loading/Loading";
 import "./Home.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import Grid from "../../components/Grid/Grid";
+import Grid from "../../components/grid/Grid";
 import Card from "../../components/PhotoCard/PhotoCard";
-import Typography from "../../components/Typography/Typography";
-import Gutter from "../../components/Gutter/Gutter";
+import Typography from "../../components/typography/Typography";
+import Gutter from "../../components/gutter/Gutter";
 
 const Home = () => {
   const [data, setData] = useState({});

@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer/Footer";
-import Gallery from "../../components/Gallery/Gallery";
-import Loading from "../../components/Loading/Loading";
+import Header from "../../components/header/Header";
+import Footer from "../../components/footer/Footer";
+import Gallery from "../../components/gallery/Gallery";
+import Loading from "../../components/loading/Loading";
 
 import "./Project.css";
 import AOS from "aos";

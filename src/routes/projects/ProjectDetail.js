@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer/Footer";
+import Header from "../../components/header/Header";
+import Footer from "../../components/footer/Footer";
 import LinkPreview from "../../components/LinkPreview/LinkPreview";
-import Loading from "../../components/Loading/Loading";
+import Loading from "../../components/loading/Loading";
 import ImageGallery from "../../components/ImageGallery/ImageGallery";
 
 import "./ProjectDetail.css";
