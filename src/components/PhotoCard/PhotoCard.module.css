@@ -1,16 +1,16 @@
 /* Card Styles */
 .card {
   overflow: hidden;
-  border-radius: 0.8rem;
+  border-radius: 2rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.5s;
   background: white;
   position: relative;
+  aspect-ratio: 1;
 }
 
 .card-image {
-  background-size: cover;
-  background-position: center;
+  object-fit: cover;
   width: 100%;
   padding-top: 100%;
   transition: transform 0.3s;
@@ -31,14 +31,11 @@
 
 .text-overlay {
   position: absolute;
-  top: 0.2rem; /* Adjust as needed to position the text */
-  left: 0.2rem; /* Adjust as needed to position the text */
-  color: black; /* Text color */
-  font-size: 1.5rem; /* Font size */
-  padding: 0.1rem 1rem;
+  top: 20px; /* Adjust as needed to position the text */
+  left: 23px; /* Adjust as needed to position the text */
+  color: var(--body); /* Text color */
   z-index: 1; /* Ensure the text appears on top of the image */
-  max-width: 75%;
-  z-index: 1; /* Ensure the text appears on top of the image */
+  max-width: 50%;
 }
 
 /* Hover Effect */

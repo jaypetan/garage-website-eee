@@ -1,7 +1,12 @@
-Garage Website Frontend source code
+# Garage Website Frontend
 
-src/component
-this folder contains all the components used in this website
+This is the repository for the frontend code of Garage@EEE's [website](https://garage-at-eee.github.io/garage-website/), built using React.
 
-src/routes
-this folder contains all the pages routed in the website. Routing will be done on App.js
+## Running The Site Locally
+
+To get started running this locally, follow the steps below:
+
+- Clone the repo
+- Open the terminal in the root folder and type `npm install`
+- Run `npm run start`
+- Website should be running on `localhost:3000`
