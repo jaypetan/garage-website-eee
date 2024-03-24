@@ -32,32 +32,33 @@ To specify the parameters, append them to the end of the endpoint after a `?` ch
 
 API will only return data for fields specified. If no fields are specifed, all fields will be fetched.
 
-| Type        | Fields         | Description                                                                | Field Type                  |
-| ----------- | -------------- | -------------------------------------------------------------------------- | --------------------------- |
-| home        | `title`        | Title displayed on the homepage                                            | `string`                    |
-|             | `bannerImage`  | URL for the banner image displayed on the homepage                         | `string`                    |
-|             | `about`        | Text for the about section of the homepage                                 | `string`                    |
-|             | `objective`    | Text for the objective section of the homepage                             | `string`                    |
-|             | `ambassadors`  | Text introducing the ambassadors on the homepage                           | `string`                    |
-|             | `innovators`   | Text introducing the innovators on the homepage                            | `string`                    |
-|             | `recruitment`  | Call to action text for the recruitment of innovators to Innovators' Track | `string`                    |
-|             | `registerLink` | Link to register for Innovators' Track                                     | `string` \| `undefined`     |
-| projectInfo | `name`         | Name of the project/team                                                   | `string`                    |
-|             | `teamMembers`  | Members who are part of the project                                        | `string[]`                  |
-|             | `contactInfo`  | Instagram/Telegram handle of person to contact                             | `string`                    |
-|             | `event`        | What event this project was part of. E.g. Escendo, Innovators' Track       | `string`                    |
-|             | `tagline`      | Short description of the project                                           | `string`                    |
-|             | `description`  | Description of the project                                                 | Markdown formatted `string` |
-|             | `coverPic`     | URL for the banner image of the project                                    | `string`                    |
-|             | `photos`       | URLs for the images of the project                                         | `string[]`                  |
-| ambassadors | `name`         | Name of the portfolio                                                      | `string`                    |
-|             | `description`  | Description of what the portfolio does                                     | Markdown formatted `string` |
-|             | `homeImage`    | URL for image to be displayed on the photo cards for the homepage          | `string`                    |
-|             | `coverPic`     | URL for the banner image of the portfolio                                  | `string`                    |
-|             | `photos`       | URLs for the images of the portfolio                                       | `string[]`                  |
-| events      | `name`         | Name of the event                                                          | `string`                    |
-|             | `tagline`      | Short description of the event                                             | `string`                    |
-|             | `description`  | Description of the event                                                   | Markdown formatted `string` |
-|             | `coverPic`     | URL for the banner image of the event                                      | `string`                    |
-|             | `photos`       | URLs for the images of the event                                           | `string[]`                  |
-|             | `links`        | Link to the event's Instagram                                              | `string` \| `undefined`     |
+| Type        | Fields            | Description                                                                | Field Type                  |
+| ----------- | ----------------- | -------------------------------------------------------------------------- | --------------------------- |
+| home        | `title`           | Title displayed on the homepage                                            | `string`                    |
+|             | `bannerImage`     | URL for the banner image displayed on the homepage                         | `string`                    |
+|             | `about`           | Text for the about section of the homepage                                 | `string`                    |
+|             | `objective`       | Text for the objective section of the homepage                             | `string`                    |
+|             | `ambassadors`     | Text introducing the ambassadors on the homepage                           | `string`                    |
+|             | `innovators`      | Text introducing the innovators on the homepage                            | `string`                    |
+|             | `innovatorsImage` | URL for the image for the innovators section                               | `string`                    |
+|             | `recruitment`     | Call to action text for the recruitment of innovators to Innovators' Track | `string`                    |
+|             | `registerLink`    | Link to register for Innovators' Track                                     | `string` \| `undefined`     |
+| projectInfo | `name`            | Name of the project/team                                                   | `string`                    |
+|             | `teamMembers`     | Members who are part of the project                                        | `string[]`                  |
+|             | `contactInfo`     | Instagram/Telegram handle of person to contact                             | `string`                    |
+|             | `event`           | What event this project was part of. E.g. Escendo, Innovators' Track       | `string`                    |
+|             | `tagline`         | Short description of the project                                           | `string`                    |
+|             | `description`     | Description of the project                                                 | Markdown formatted `string` |
+|             | `coverPic`        | URL for the banner image of the project                                    | `string`                    |
+|             | `photos`          | URLs for the images of the project                                         | `string[]`                  |
+| ambassadors | `name`            | Name of the portfolio                                                      | `string`                    |
+|             | `description`     | Description of what the portfolio does                                     | Markdown formatted `string` |
+|             | `homeImage`       | URL for image to be displayed on the photo cards for the homepage          | `string`                    |
+|             | `coverPic`        | URL for the banner image of the portfolio                                  | `string`                    |
+|             | `photos`          | URLs for the images of the portfolio                                       | `string[]`                  |
+| events      | `name`            | Name of the event                                                          | `string`                    |
+|             | `tagline`         | Short description of the event                                             | `string`                    |
+|             | `description`     | Description of the event                                                   | Markdown formatted `string` |
+|             | `coverPic`        | URL for the banner image of the event                                      | `string`                    |
+|             | `photos`          | URLs for the images of the event                                           | `string[]`                  |
+|             | `links`           | Link to the event's Instagram                                              | `string` \| `undefined`     |
