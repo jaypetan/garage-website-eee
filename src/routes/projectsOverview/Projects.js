@@ -6,18 +6,20 @@ import { API_DOMAIN } from "../../utils/Constants";
 import Footer from "../../components/footer/Footer";
 import OverviewPage from "../../components/overviewPage/OverviewPage";
 
-const Events = () => {
+const Projects = () => {
   const { data, isLoading } = useFetch({
-    url: API_DOMAIN + "?type=events&fields=name,tagline,coverPic",
+    url: API_DOMAIN + "?type=projectInfo&fields=name,tagline,coverPic",
   });
 
   return (
     <Transition isLoading={isLoading}>
       <Header />
-      <Gutter>{data && <OverviewPage heading={"Events"} data={data} />}</Gutter>
+      <Gutter>
+        {data && <OverviewPage heading={"Project Showcase"} data={data} />}
+      </Gutter>
       <Footer />
     </Transition>
   );
 };
 
-export default Events;
+export default Projects;

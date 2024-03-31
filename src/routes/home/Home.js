@@ -154,27 +154,16 @@ const Home = () => {
               <section className={styles["section-wrapper"]}>
                 <Typography variant={"heading"}>OUR EVENTS</Typography>
                 {eventData && (
-                  <div className={styles["grid-wrapper"]}>
-                    <Grid>
-                      {eventData.map((card, index) => (
-                        <Card
-                          key={card.name}
-                          image={card.coverPic}
-                          to={"events/" + index}
-                          bottomText={card.name}
-                        />
-                      ))}
-                    </Grid>
-                    <button
-                      className={[
-                        styles["site-button"],
-                        styles["outline"],
-                      ].join(" ")}
-                      onClick={() => navigate("/events")}
-                    >
-                      <Typography variant="body">View More</Typography>
-                    </button>
-                  </div>
+                  <Grid>
+                    {eventData.map((card, index) => (
+                      <Card
+                        key={card.name}
+                        image={card.coverPic}
+                        to={"events/" + index}
+                        bottomText={card.name}
+                      />
+                    ))}
+                  </Grid>
                 )}
               </section>
             </div>
