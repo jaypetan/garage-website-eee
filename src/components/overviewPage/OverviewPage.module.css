@@ -1,0 +1,29 @@
+.heading-space {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  gap: 1.5rem;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--content-gap-mobile);
+  padding-top: var(--top-padding);
+  padding-bottom: var(--content-gap-desktop);
+}
+
+@media (max-width: 1200px) {
+  .content-wrapper {
+    padding-bottom: var(--content-gap-tablet);
+  }
+}
+
+@media (max-width: 640px) {
+  .content-wrapper {
+    padding-top: var(--top-padding-mobile);
+    padding-bottom: var(--content-gap-mobile);
+  }
+}
