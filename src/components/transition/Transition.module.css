@@ -1,5 +1,5 @@
 .white {
-  height: 100vh;
+  height: 100lvh;
   width: 100vw;
   position: fixed;
   background-color: var(--white);
@@ -9,7 +9,7 @@
 }
 
 .blue {
-  height: 100vh;
+  height: 100lvh;
   width: 100vw;
   position: fixed;
   background-color: var(--garage-blue);
@@ -19,7 +19,7 @@
 }
 
 .overlay {
-  height: 100vh;
+  height: 100lvh;
   width: 100vw;
   position: fixed;
   background-color: black;

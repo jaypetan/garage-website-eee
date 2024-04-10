@@ -21,21 +21,21 @@ const Transition = ({ children, isLoading }) => {
 
   const slideWhite = {
     initial: {
-      top: 0,
+      y: 0,
     },
     hide: {
-      top: "-100%",
+      y: "-100%",
       transition: {
         delay: 0.15,
         duration: duration + 0.1,
         ease: easing,
       },
       transitionEnd: {
-        top: "100%",
+        y: "100%",
       },
     },
     exit: {
-      top: 0,
+      y: 0,
       transition: {
         duration: duration,
         ease: easing,
@@ -45,20 +45,20 @@ const Transition = ({ children, isLoading }) => {
 
   const slideBlue = {
     initial: {
-      top: 0,
+      y: 0,
     },
     hide: {
-      top: "-100%",
+      y: "-100%",
       transition: {
         duration: duration,
         ease: easing,
       },
       transitionEnd: {
-        top: "100%",
+        y: "100%",
       },
     },
     exit: {
-      top: 0,
+      y: 0,
       transition: {
         delay: 0.15,
         duration: duration + 0.1,

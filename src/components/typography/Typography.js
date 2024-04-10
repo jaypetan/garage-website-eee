@@ -1,19 +1,19 @@
-import typographyConfig from "./TypographyConfig";
-import useBreakpoint from "../../hooks/useBreakpoint";
+import styles from "./Typography.module.css";
 
-const Typography = ({ variant, children, style, ...props }) => {
-  const breakpoint = useBreakpoint();
-  const typography = typographyConfig[breakpoint] || {};
-  const { fontSize, lineHeight, fontWeight } = typography[variant] || {};
+const Typography = ({
+  variant = "body",
+  children,
+  style,
+  className,
+  ...props
+}) => {
+  const cn = [styles[variant], className, styles["base"]].join(" ");
 
   return (
     <p
       {...props}
+      className={cn}
       style={{
-        fontSize,
-        lineHeight,
-        fontWeight,
-        whiteSpace: "pre-line",
         ...style,
       }}
     >
