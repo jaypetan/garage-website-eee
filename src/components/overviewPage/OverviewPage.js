@@ -2,6 +2,7 @@ import BackButton from "../../components/BackButton/BackButton";
 import Grid from "../../components/grid/Grid";
 import Card from "../../components/PhotoCard/PhotoCard";
 import Typography from "../../components/typography/Typography";
+import Button from "../button/Button";
 
 import styles from "./OverviewPage.module.css";
 
@@ -24,9 +25,9 @@ const OverviewPage = ({ heading, data }) => {
               />
             ))}
           </Grid>
-          {/* <button onClick={() => window.scrollTo(0, 0)}>
-            <Typography variant="body">Back to top</Typography>
-          </button> */}
+          <Button onClick={() => window.scrollTo(0, 0)} variant="outlined">
+            Back to top
+          </Button>
         </>
       )}
     </div>

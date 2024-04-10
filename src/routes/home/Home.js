@@ -4,25 +4,25 @@ import Typography from "../../components/typography/Typography";
 import Transition from "../../components/transition/Transition";
 import useFetch from "../../hooks/useFetch";
 import { API_DOMAIN } from "../../utils/Constants";
-import { useNavigate } from "react-router-dom";
 import PageTemplate from "../../components/pageTemplate/PageTemplate";
 
 import styles from "./Home.module.css";
+import Button from "../../components/button/Button";
+import LoadingSpinner from "../../components/loadingSpinner/LoadingSpinner";
 
 const Home = () => {
   const { data, isLoading } = useFetch({
     url: API_DOMAIN + "?type=home",
   });
-  const { data: ambassadorData, isLoading: ambassadorIsLoading } = useFetch({
+  const { data: ambassadorData } = useFetch({
     url: API_DOMAIN + "?type=ambassadors&fields=name,homeImage",
   });
-  const { data: projectData, isLoading: projectIsLoading } = useFetch({
+  const { data: projectData } = useFetch({
     url: API_DOMAIN + "?type=projectInfo&fields=name,coverPic",
   });
-  const { data: eventData, isLoading: eventIsLoading } = useFetch({
+  const { data: eventData } = useFetch({
     url: API_DOMAIN + "?type=events&fields=name,coverPic",
   });
-  const navigate = useNavigate();
 
   return (
     <Transition isLoading={isLoading}>
@@ -63,22 +63,24 @@ const Home = () => {
                 <Typography variant={"smallHeading"}>Ambassadors</Typography>
                 <Typography variant={"body"}>{data.ambassadors}</Typography>
               </div>
-              {!ambassadorIsLoading && (
-                <div className={styles["grid-wrapper"]}>
-                  <Grid>
-                    {ambassadorData.map((card, index) => (
-                      <Card
-                        key={card.name}
-                        image={card.homeImage}
-                        topText={card.name}
-                        to={"ambassadors/" + index}
-                      />
-                    ))}
-                  </Grid>
+              {ambassadorData ? (
+                <Grid>
+                  {ambassadorData.map((card, index) => (
+                    <Card
+                      key={card.name}
+                      image={card.homeImage}
+                      topText={card.name}
+                      to={"ambassadors/" + index}
+                    />
+                  ))}
+                </Grid>
+              ) : (
+                <div className={styles["loading-wrapper"]}>
+                  <LoadingSpinner />
                 </div>
               )}
             </section>
-            {!isLoading && (
+            {data && (
               <section className={styles["innovators"]}>
                 <img
                   className={styles["innovators-image"]}
@@ -95,29 +97,18 @@ const Home = () => {
                     </Typography>
                     <Typography variant={"body"}>{data.recruitment}</Typography>
                   </div>
-                  <button
-                    onClick={() =>
-                      navigate(
-                        data.registerLink ? data.registerLink : undefined
-                      )
-                    }
-                    className={[
-                      !data.registerLink
-                        ? styles["disabled"]
-                        : styles["outline"],
-                      styles["site-button"],
-                    ].join(" ")}
+                  <Button
+                    to={data.registerLink ? data.registerLink : undefined}
+                    disabled={!data.registerLink}
                   >
-                    <Typography variant={"body"}>
-                      {data.registerLink ? "Register" : "Registration Closed"}
-                    </Typography>
-                  </button>
+                    {data.registerLink ? "Register" : "Registration Closed"}
+                  </Button>
                 </div>
               </section>
             )}
             <section className={styles["section-wrapper"]}>
               <Typography variant={"heading"}>PROJECT SHOWCASE</Typography>
-              {projectData && (
+              {projectData ? (
                 <div className={styles["grid-wrapper"]}>
                   <Grid>
                     {projectData.map((card, index) => (
@@ -129,20 +120,19 @@ const Home = () => {
                       />
                     ))}
                   </Grid>
-                  <button
-                    className={[styles["site-button"], styles["outline"]].join(
-                      " "
-                    )}
-                    onClick={() => navigate("/projects")}
-                  >
-                    <Typography variant={"body"}>View More</Typography>
-                  </button>
+                  <Button to={"/projects"} variant="outlined">
+                    View More
+                  </Button>
+                </div>
+              ) : (
+                <div className={styles["loading-wrapper"]}>
+                  <LoadingSpinner />
                 </div>
               )}
             </section>
             <section className={styles["section-wrapper"]}>
               <Typography variant={"heading"}>OUR EVENTS</Typography>
-              {eventData && (
+              {eventData ? (
                 <Grid>
                   {eventData.map((card, index) => (
                     <Card
@@ -153,6 +143,10 @@ const Home = () => {
                     />
                   ))}
                 </Grid>
+              ) : (
+                <div className={styles["loading-wrapper"]}>
+                  <LoadingSpinner />
+                </div>
               )}
             </section>
           </div>

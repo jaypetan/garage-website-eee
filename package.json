@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "version": "0.1.0",
-  "homepage": "http://localhost:3000",
+  "homepage": "https://garage-at-eee.github.io/garage-website/",
   "private": true,
   "dependencies": {
     "@splidejs/react-splide": "^0.7.8",

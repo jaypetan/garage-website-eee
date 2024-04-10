@@ -28,6 +28,10 @@ To specify the parameters, append them to the end of the endpoint after a `?` ch
 | `ambassadors` | Gets the data related to Garage's ambassador portfolios |
 | `events`      | Gets the data related to events hosted by Garage        |
 
+### `index`
+
+Specify the index of data you want to fetch. This corresponds to the row index + 2 (accounting for header and starting index) in the Google Sheets.
+
 ### `fields`
 
 API will only return data for fields specified. If no fields are specifed, all fields will be fetched.

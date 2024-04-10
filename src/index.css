@@ -1,7 +1,7 @@
 /* OVERALL STYLING */
 * {
   box-sizing: border-box;
-  scrollbar-color: var(--table-disabled) var(--background)
+  scrollbar-color: var(--table-disabled) var(--background);
 }
 
 html {
@@ -12,21 +12,25 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background : var(--background);
+  background: var(--background);
 }
 
 :root {
-  --garage-blue: #284D8A;
-  --white: #FFFFFF;
-  --body: #1A1A1A;
-  --background: #F6F6F6;
-  --outline: #CBCBCB;
-  --disabled: #D9D9D9;
+  --garage-blue: #284d8a;
+  --garage-blue-hover: #204279;
+  --garage-blue-press: #193462;
+  --white: #ffffff;
+  --body: #1a1a1a;
+  --background: #f6f6f6;
+  --outline: #cbcbcb;
+  --outline-hover: #1a1a1a1a;
+  --outline-press: #1a1a1a33;
+  --disabled: #d9d9d9;
   --on-disabled: #737373;
-  --error: #E10D0D;
-  --table-disabled: #A3B4CC;
-  --table-accent: #E5F1FF;
-  
+  --error: #e10d0d;
+  --table-disabled: #a3b4cc;
+  --table-accent: #e5f1ff;
+
   --max-width: 1440px;
   --header-height: 100px;
   --gutter: 24px;
@@ -47,10 +51,10 @@ a {
 
 p {
   margin: 0;
-  font-family: 'Lexend Deca';
+  font-family: "Lexend Deca";
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }

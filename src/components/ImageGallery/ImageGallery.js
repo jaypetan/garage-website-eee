@@ -12,7 +12,13 @@ function Carousel(props) {
   for (let i = 0; i < contentList.length; i++) {
     tilesRenderList.push(
       <SplideSlide key={i}>
-        <img src={props.images[i]} className="card card-img" alt="..." />
+        <img
+          loading="lazy"
+          referrerPolicy="no-referrer"
+          src={props.images[i]}
+          className="card card-img"
+          alt="..."
+        />
       </SplideSlide>
     );
   }

@@ -73,31 +73,15 @@
   flex-direction: column;
   row-gap: var(--content-gap-mobile);
   width: 100%;
+  align-items: center;
 }
 
-.link-view-more {
-  align-self: center;
-}
-
-.site-button {
-  padding: 16px 64px;
-  border-radius: 100px;
-  cursor: pointer;
-}
-
-.outline {
-  border: 4px solid var(--body);
-  padding-top: 12px;
-  padding-bottom: 12px;
-}
-
-.disabled {
-  border: none;
-  cursor: default;
-}
-
-.disabled p {
-  color: var(--on-disabled);
+.loading-wrapper {
+  width: 100%;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (max-width: 1200px) {
