@@ -23,6 +23,7 @@ const useFetch = ({ url, headers = {}, enabled = true }) => {
         );
       })
       .then((data) => {
+        if (data.error) throw new Error(data.error);
         setData(data);
       })
       .then(() => {

@@ -1,13 +1,6 @@
-.home-page {
-  display: flex;
-  flex-direction: column;
-}
-  
 .content-wrapper {
   display: flex;
   flex-direction: column;
-  padding-top: var(--top-padding);
-  padding-bottom: 240px;
   row-gap: 240px;
 }
 
@@ -109,7 +102,7 @@
 
 @media (max-width: 1200px) {
   .scroll-more {
-      display: none;
+    display: none;
   }
   .section-wrapper {
     row-gap: var(--content-gap-tablet);
@@ -123,7 +116,6 @@
   }
   .content-wrapper {
     row-gap: 180px;
-    padding-bottom: 180px;
   }
   .innovators {
     flex-direction: column;
@@ -135,9 +127,6 @@
 }
 
 @media (max-width: 640px) {
-  .content-wrapper {
-      padding-top: var(--top-padding-mobile);
-  }
   .section-wrapper {
     row-gap: var(--content-gap-mobile);
   }
@@ -146,7 +135,6 @@
   }
   .content-wrapper {
     row-gap: 90px;
-    padding-bottom: 90px;
   }
   .banner-image {
     min-height: 320px;

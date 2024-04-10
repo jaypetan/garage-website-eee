@@ -24,9 +24,9 @@ const OverviewPage = ({ heading, data }) => {
               />
             ))}
           </Grid>
-          <button onClick={() => window.scrollTo(0, 0)}>
+          {/* <button onClick={() => window.scrollTo(0, 0)}>
             <Typography variant="body">Back to top</Typography>
-          </button>
+          </button> */}
         </>
       )}
     </div>

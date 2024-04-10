@@ -1,0 +1,24 @@
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--content-gap-desktop);
+}
+
+.gallery-box {
+  display: flex;
+  flex-direction: column;
+  gap: var(--content-gap-mobile);
+}
+
+/* Wide screen styling */
+@media (min-width: 1200px) {
+  .main-wrapper {
+    gap: var(--content-gap-tablet);
+  }
+}
+
+@media (max-width: 640px) {
+  .main-wrapper {
+    gap: var(--content-gap-mobile);
+  }
+}

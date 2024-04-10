@@ -1,10 +1,8 @@
-import Gutter from "../../components/gutter/Gutter";
-import Header from "../../components/header/Header";
 import Transition from "../../components/transition/Transition";
 import useFetch from "../../hooks/useFetch";
 import { API_DOMAIN } from "../../utils/Constants";
-import Footer from "../../components/footer/Footer";
 import OverviewPage from "../../components/overviewPage/OverviewPage";
+import PageTemplate from "../../components/pageTemplate/PageTemplate";
 
 const Events = () => {
   const { data, isLoading } = useFetch({
@@ -13,9 +11,9 @@ const Events = () => {
 
   return (
     <Transition isLoading={isLoading}>
-      <Header />
-      <Gutter>{data && <OverviewPage heading={"Events"} data={data} />}</Gutter>
-      <Footer />
+      <PageTemplate>
+        {data && <OverviewPage heading={"Events"} data={data} />}
+      </PageTemplate>
     </Transition>
   );
 };
