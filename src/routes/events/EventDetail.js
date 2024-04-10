@@ -1,19 +1,20 @@
 import { useParams } from "react-router-dom";
-import ImageGallery from "../../components/ImageGallery/ImageGallery";
-import Typography from "../../components/typography/Typography";
-import useFetch from "../../hooks/useFetch";
-import { API_DOMAIN } from "../../utils/Constants";
 import Transition from "../../components/transition/Transition";
 import PageTemplate from "../../components/pageTemplate/PageTemplate";
-
-import styles from "./ProjectDetail.module.css";
+import useFetch from "../../hooks/useFetch";
 import HeroImage from "../../components/heroImage/heroImage";
+import Typography from "../../components/typography/Typography";
+import LinkPreview from "../../components/LinkPreview/LinkPreview";
+import { API_DOMAIN } from "../../utils/Constants";
+import ImageGallery from "../../components/ImageGallery/ImageGallery";
 
-function ProjectDetail() {
+import styles from "./EventDetail.module.css";
+
+function EventDetail() {
   const params = useParams();
   const id = params.id;
   const { data, isLoading } = useFetch({
-    url: API_DOMAIN + "?type=projectInfo&index=" + id,
+    url: API_DOMAIN + "?type=events&index=" + id,
   });
   return (
     <Transition isLoading={isLoading}>
@@ -25,6 +26,7 @@ function ProjectDetail() {
               src={data.coverPic}
               subheading={data.tagline}
             />
+            {data.link && <LinkPreview link={data.link} />}
             <Typography variant="body">{data.description}</Typography>
             <div className={styles["gallery-box"]}>
               <Typography variant="smallHeading">Gallery</Typography>
@@ -37,4 +39,4 @@ function ProjectDetail() {
   );
 }
 
-export default ProjectDetail;
+export default EventDetail;

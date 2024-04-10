@@ -1,0 +1,17 @@
+.wrapper {
+  padding-top: var(--top-padding);
+  padding-bottom: var(--content-gap-desktop);
+}
+
+@media (max-width: 1200px) {
+  .wrapper {
+    padding-bottom: var(--content-gap-tablet);
+  }
+}
+
+@media (max-width: 640px) {
+  .wrapper {
+    padding-top: var(--top-padding-mobile);
+    padding-bottom: var(--content-gap-mobile);
+  }
+}
