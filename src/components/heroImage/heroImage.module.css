@@ -8,6 +8,13 @@
     gap: var(--content-gap-mobile);
 }
 
+.subheader-space {
+    font-style: italic;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    display: flex;
+}
+
 .heading-space {
     display: flex;
     justify-content: space-between; /* Elements at opposite ends with space in between */

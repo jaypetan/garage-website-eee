@@ -3,12 +3,52 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-top: var(--topPadding, 124px);
+    padding: 0px;
+}
+
+.detail-page .detail-header-box{
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    justify-content: space-between;
+    width: 100%;
+    height: var(--header-height);
+    gap: 24px;
+    margin: 0px;
 }
 
 .detail-page .main-wrapper {
     width: 78%;
     margin: 0 auto;
+}
+
+.detail-page .subheader{
+    font-style: italic;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    display: flex;
+}
+
+.detail-page .upper-back-button {
+    transition: 0.2s;
+    width: 5.5rem;
+    height: 3rem;
+    border-radius: 50rem;
+    border-width: 0.2rem;
+    border-color: black;
+    margin-left: 20px;
+    background-color: black;
+    color: white;
+    float: right;
+}
+
+.detail-page .upper-back-button:hover {
+    background-color: #d2d1d100;
+    color: black;
+}
+
+.detail-page .upper-back-button:active {
+    background-color: #c7c7c7;
 }
 
 .detail-page .article{
@@ -37,6 +77,17 @@
         padding-top: var(--top-pading),174px;
     }
 
+    .upper-back-button {
+        width: 7.5rem;
+        height: 3.4rem;
+    }    
+
+    .display-image {
+        border-radius: 36px;
+        margin-top: var(--content-gap-mobile);
+        margin-bottom: var(--content-gap-desktop);
+    }
+
     .article{
         margin-top: var(--content-gap-desktop);
         margin-bottom: var(--content-gap-desktop);
@@ -61,6 +112,16 @@
         padding: var(--topPadding, 124px) var(--Gutter, 24px) 0px var(--Gutter, 24px);
     }
 
+    .upper-back-button {
+        width: 6.8rem;
+        height: 3.4rem;
+    }    
+
+    .display-image {
+        margin-top: var(--content-gap-mobile);
+        margin-bottom: var(--content-gap-tablet);
+    }
+
     .article{
         margin-top: var(--content-gap-tablet);
         margin-bottom: var(--content-gap-tablet);
@@ -83,6 +144,11 @@
 
     .detail-main{
         padding: var(--topPaddingMobile, 104px) var(--Gutter, 24px) 0px var(--Gutter, 24px);
+    }
+
+    .display-image {
+        margin-top: var(--content-gap-mobile);
+        margin-bottom: var(--content-gap-mobile);
     }
 
     .article{

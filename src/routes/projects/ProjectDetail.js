@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import LinkPreview from "../../components/LinkPreview/LinkPreview";
+import HeroImageDetail from "../../components/heroImage/heroImageDetail";
 import Loading from "../../components/loading/Loading";
 import ImageGallery from "../../components/ImageGallery/ImageGallery";
 
@@ -53,15 +54,9 @@ function ProjectDetail() {
       ) : (
         <main className="detail-main">
           <div className="main-wrapper" data-aos="fade-up">
-            {/* put your code below */}
-            <h1 className="detail-header">{state.name} </h1>
-            <h3 className="subheader">{state.desc}</h3>
-            <br />
-            <img
-              src={state.displayImageUrl}
-              className="display-image"
-              alt={"image of '" + state.name + "'"}
-            ></img>
+            <div>
+              <HeroImageDetail heading={state.name} subheading={state.desc} src={state.displayImageUrl}/>
+            </div>
             <br />
             <br />
             <LinkPreview link={String(state.link)} />
