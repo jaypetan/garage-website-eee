@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-const useFetch = ({ url, headers = {}, enabled = true }) => {
+const useFetch = ({ url, headers = {}, enabled = true, useCache = true }) => {
   const control = useRef();
   const [isLoading, setIsLoading] = useState(enabled);
   const [error, setError] = useState();
@@ -13,6 +13,15 @@ const useFetch = ({ url, headers = {}, enabled = true }) => {
     const controller = new AbortController();
     control.current = controller;
     setIsLoading(true);
+
+    const cachedData = localStorage.getItem(url);
+
+    if (cachedData && useCache) {
+      console.log(JSON.parse(cachedData));
+      setData(JSON.parse(cachedData));
+      setIsLoading(false);
+    }
+
     fetch(url, { signal: control.current.signal, headers: headers })
       .then((response) => {
         if (response.ok) {
@@ -22,9 +31,12 @@ const useFetch = ({ url, headers = {}, enabled = true }) => {
           `Unable to fetch page data! ${response.status} ${response.statusText}`
         );
       })
-      .then((data) => {
-        if (data.error) throw new Error(data.error);
-        setData(data);
+      .then((responseData) => {
+        if (responseData.error) throw new Error(responseData.error);
+        localStorage.setItem(url, JSON.stringify(responseData));
+        if (!useCache || !data) {
+          setData(responseData);
+        }
       })
       .then(() => {
         setIsLoading(false);
