@@ -26,7 +26,7 @@ function EventDetail() {
               src={data.coverPic}
               subheading={data.tagline}
             />
-            {data.link && <LinkPreview link={data.link} />}
+            {data.link && <LinkPreview link={data.link.split(",")[0]} />}
             <Typography variant="body">{data.description}</Typography>
             <div className={styles["gallery-box"]}>
               <Typography variant="smallHeading">Gallery</Typography>
