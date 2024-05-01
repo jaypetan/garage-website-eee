@@ -116,12 +116,7 @@ const Header = () => {
         <Gutter>
           <div className={styles["header-inner"]}>
             <Link to="/">
-              <img
-                src={Logo}
-                alt="Garage Logo"
-                className={styles.logo}
-                height={"38px"}
-              />
+              <img src={Logo} alt="Garage Logo" className={styles.logo} />
             </Link>
             {breakpoint !== "mobile" ? (
               <nav className={styles["nav"]}>
@@ -146,10 +141,7 @@ const Header = () => {
               animate={open ? { height: "auto" } : { height: 0 }}
               transition={{ duration: 0.5, ease: [0.7, 0, 0.3, 1] }}
             >
-              <motion.div
-                className={styles["drawer-inner"]}
-                transition={{ staggerChildren: 0.1 }}
-              >
+              <motion.div className={styles["drawer-inner"]}>
                 <AnimatePresence mode="wait">
                   {open && (
                     <motion.div

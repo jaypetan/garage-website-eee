@@ -24,6 +24,8 @@
 
 .navlink {
   color: var(--body);
+  position: relative;
+  display: block;
 }
 
 .navlink:hover {
@@ -31,7 +33,7 @@
 }
 
 .navlink::after {
-  position: relative;
+  position: absolute;
   content: "";
   display: block;
   transition: width 0.3s cubic-bezier(0.7, 0, 0.3, 1);
