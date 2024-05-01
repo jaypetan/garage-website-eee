@@ -11,6 +11,7 @@ const Card = ({ image, topText, bottomText, to }) => {
           loading="lazy"
           src={image}
           referrerPolicy="no-referrer"
+          alt={topText ?? bottomText}
         />
         <div className={styles["text-overlay"]}>
           <Typography variant={"smallHeading"}>{topText}</Typography>

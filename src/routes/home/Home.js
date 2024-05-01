@@ -44,7 +44,7 @@ const Home = () => {
               <img
                 className={styles["banner-image"]}
                 src={data.bannerImage}
-                alt="Garage@EEE Banner Image"
+                alt="Garage@EEE Cover"
                 referrerPolicy="no-referrer"
               />
             </div>
@@ -85,7 +85,7 @@ const Home = () => {
                 <img
                   className={styles["innovators-image"]}
                   src={data.innovatorsImage}
-                  alt="Image for Innovators"
+                  alt="Innovators illustration"
                   referrerPolicy="no-referrer"
                 />
                 <div className={styles["innovators-text"]}>

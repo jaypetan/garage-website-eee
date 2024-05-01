@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   AnimatePresence,
-  delay,
   motion,
   useMotionValueEvent,
   useScroll,
@@ -103,7 +102,7 @@ const Header = () => {
   };
 
   useEffect(() => {
-    if (breakpoint !== "mobile" && open) setOpen(false);
+    if (breakpoint !== "mobile") setOpen(false);
   }, [breakpoint]);
 
   return (
