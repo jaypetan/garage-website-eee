@@ -5,6 +5,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .outlined {
@@ -63,6 +64,10 @@
 
 .filled.disabled:active {
   background-color: var(--Disabled, #d9d9d9);
+}
+
+.disabled {
+  cursor: default;
 }
 
 .start-icon-wrapper {
