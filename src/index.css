@@ -32,7 +32,7 @@ body {
   --table-accent: #e5f1ff;
 
   --max-width: 1440px;
-  --header-height: 100px;
+  --header-height: 70px;
   --gutter: 24px;
   --gutter-mobile: 16px;
   --content-gap-desktop: 100px;
@@ -51,7 +51,7 @@ a {
 
 p {
   margin: 0;
-  font-family: "Lexend Deca";
+  font-family: "Lexend Deca", sans-serif;
 }
 
 code {

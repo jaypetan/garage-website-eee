@@ -1,6 +1,6 @@
 # Garage Website Frontend
 
-This is the repository for the frontend code of Garage@EEE's [website](https://garage-at-eee.github.io/garage-website/), built using React.
+This is the repository for the frontend code of Garage@EEE's [website](https://garage-eee.com/), built using React.
 
 ## Running The Site Locally
 

@@ -17,7 +17,6 @@ const useFetch = ({ url, headers = {}, enabled = true, useCache = true }) => {
     const cachedData = localStorage.getItem(url);
 
     if (cachedData && useCache) {
-      console.log(JSON.parse(cachedData));
       setData(JSON.parse(cachedData));
       setIsLoading(false);
     }

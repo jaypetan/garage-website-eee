@@ -31,6 +31,24 @@
   font-weight: 300;
 }
 
+.start,
+.right {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
+}
+
+.end,
+.left {
+  text-align: left;
+}
+
+.justify {
+  text-align: justify;
+}
+
 @media (max-width: 1200px) {
   .banner {
     font-size: 64px;
@@ -51,7 +69,7 @@
   }
   .body {
     font-size: 20px;
-    line-height: 32x;
+    line-height: 32px;
     font-weight: 400;
   }
   .subtitle {
