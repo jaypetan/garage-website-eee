@@ -115,7 +115,7 @@ const Header = () => {
         <Gutter>
           <div className={styles["header-inner"]}>
             <Link to="/">
-              <img src={Logo} alt="Garage Logo" className={styles.logo} />
+              <img src={Logo} alt="Garage Logo" />
             </Link>
             {breakpoint !== "mobile" ? (
               <nav className={styles["nav"]}>
