@@ -142,7 +142,7 @@ const Header = () => {
               transition={{ duration: 0.5, ease: [0.7, 0, 0.3, 1] }}
             >
               <motion.div className={styles["drawer-inner"]}>
-                <AnimatePresence mode="wait">
+                <AnimatePresence>
                   {open && (
                     <motion.div
                       key="separator"
@@ -180,7 +180,7 @@ const Header = () => {
           )}
         </Gutter>
       </header>
-      <Modal open={open} onClose={() => setOpen(false)} />
+      <Modal open={open} onClose={() => setOpen(false)} below />
     </>
   );
 };

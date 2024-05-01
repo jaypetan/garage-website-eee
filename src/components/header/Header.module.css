@@ -3,7 +3,7 @@
   left: 0;
   right: 0;
   position: fixed;
-  z-index: 9;
+  z-index: 8;
   transition: background-color 0.4s, filter 0.4s;
   background-color: var(--background);
 }

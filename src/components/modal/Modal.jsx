@@ -2,12 +2,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import styles from "./Modal.module.css";
 import { createPortal } from "react-dom";
 
-const Modal = ({ children, open, onClose }) => {
+const Modal = ({ children, open, onClose, below = false }) => {
   return createPortal(
-    <AnimatePresence mode="wait">
+    <AnimatePresence>
       {open && (
         <motion.div
-          className={styles.modal}
+          className={[styles.modal, below && styles["below"]]
+            .filter(Boolean)
+            .join(" ")}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
