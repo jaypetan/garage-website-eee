@@ -1,18 +1,15 @@
 import { Link } from "react-router-dom"; // Import Link from React Router
 import styles from "./PhotoCard.module.css";
 import Typography from "../typography/Typography";
+import Image from "../image/Image";
 
 const Card = ({ image, topText, bottomText, to }) => {
   const cardContent = (
     <div className={styles["card-wrapper"]}>
       <div className={styles.card}>
-        <img
-          className={styles["card-image"]}
-          loading="lazy"
-          src={image}
-          referrerPolicy="no-referrer"
-          alt={topText ?? bottomText}
-        />
+        <div className={styles["card-image"]}>
+          <Image src={image} alt={topText ?? bottomText} />
+        </div>
         <div className={styles["text-overlay"]}>
           <Typography variant={"smallHeading"}>{topText}</Typography>
         </div>

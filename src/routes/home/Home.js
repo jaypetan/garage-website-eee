@@ -9,6 +9,7 @@ import PageTemplate from "../../components/pageTemplate/PageTemplate";
 import styles from "./Home.module.css";
 import Button from "../../components/button/Button";
 import LoadingSpinner from "../../components/loadingSpinner/LoadingSpinner";
+import Image from "../../components/image/Image";
 
 const Home = () => {
   const { data, isLoading } = useFetch({
@@ -41,11 +42,10 @@ const Home = () => {
                   </Typography>
                 </div>
               </div>
-              <img
+              <Image
                 className={styles["banner-image"]}
                 src={data.bannerImage}
                 alt="Garage@EEE Cover"
-                referrerPolicy="no-referrer"
               />
             </div>
             <section className={styles["section-wrapper"]}>
@@ -82,11 +82,11 @@ const Home = () => {
             </section>
             {data && (
               <section className={styles["innovators"]}>
-                <img
+                <Image
                   className={styles["innovators-image"]}
+                  objectFit="contain"
                   src={data.innovatorsImage}
                   alt="Innovators illustration"
-                  referrerPolicy="no-referrer"
                 />
                 <div className={styles["innovators-text"]}>
                   <div className={styles["text-section"]}>
