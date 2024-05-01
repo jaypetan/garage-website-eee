@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import ImageGallery from "../../components/ImageGallery/ImageGallery";
+import Carousel from "../../components/carousel/Carousel";
 import Typography from "../../components/typography/Typography";
 import useFetch from "../../hooks/useFetch";
 import { API_DOMAIN } from "../../utils/Constants";
@@ -28,7 +28,7 @@ function ProjectDetail() {
             <Typography variant="body">{data.description}</Typography>
             <div className={styles["gallery-box"]}>
               <Typography variant="smallHeading">Gallery</Typography>
-              {data.photos && <ImageGallery images={data.photos} />}
+              {data.photos && <Carousel images={data.photos} />}
             </div>
           </div>
         )}
