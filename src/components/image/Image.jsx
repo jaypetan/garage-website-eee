@@ -7,10 +7,17 @@ import styles from "./Image.module.css";
  * and fades image in on load
  */
 const Image = forwardRef(
-  ({ src, alt, className, objectFit = "cover", ...rest }, ref) => {
+  (
+    { src, alt, className, wrapperClassName, objectFit = "cover", ...rest },
+    ref
+  ) => {
     const [isLoading, setIsLoading] = useState(true);
     return (
-      <div className={styles["image-wrapper"]}>
+      <div
+        className={[styles["image-wrapper"], wrapperClassName]
+          .filter(Boolean)
+          .join(" ")}
+      >
         {isLoading && (
           <div className={styles["spinner"]}>
             <LoadingSpinner />

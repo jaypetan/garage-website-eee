@@ -64,6 +64,17 @@ const Carousel = ({ images }) => {
     emblaApi.on("select", onSelect);
   }, [emblaApi, onSelect]);
 
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "ArrowLeft" && !prevBtnDisabled) onPrevButtonClick();
+      if (e.key === "ArrowRight" && !nextBtnDisabled) onNextButtonClick();
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [prevBtnDisabled, nextBtnDisabled, emblaApi]);
+
   return (
     <section className={styles["carousel-container"]}>
       <div ref={emblaRef}>
@@ -102,8 +113,13 @@ const Carousel = ({ images }) => {
         )}
       </div>
       <Modal open={!!focusImage} onClose={() => setFocusImage("")}>
-        <div className={styles["focus-image"]}>
-          <Image src={focusImage} alt="" onClick={(e) => e.stopPropagation()} />
+        <div>
+          <Image
+            src={focusImage}
+            alt=""
+            onClick={(e) => e.stopPropagation()}
+            className={styles["focus-image"]}
+          />
         </div>
       </Modal>
     </section>

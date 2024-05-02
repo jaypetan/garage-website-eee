@@ -8,7 +8,9 @@
   border: none;
   fill: var(--body);
   cursor: pointer;
-  border-radius: 32px;
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
 }
 
 .pagination:disabled {
@@ -50,5 +52,6 @@
 }
 
 .focus-image {
-  max-width: calc(100% - 3rem);
+  max-width: calc(100vw - 3rem);
+  max-height: calc(100vh - 3rem);
 }
