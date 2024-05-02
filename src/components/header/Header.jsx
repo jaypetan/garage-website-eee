@@ -80,27 +80,6 @@ const Header = () => {
     },
   ];
 
-  const linkVariants = {
-    initial: {
-      x: 30,
-    },
-    animate: (i) => ({
-      x: 0,
-      transition: {
-        delay: 0.1 * i + 0.2,
-        duration: 0.5,
-        ease: [0.33, 1, 0.68, 1],
-      },
-    }),
-    exit: {
-      y: -20,
-      transition: {
-        duration: 0.5,
-        ease: [0.7, 0, 0.3, 1],
-      },
-    },
-  };
-
   useEffect(() => {
     if (breakpoint !== "mobile") setOpen(false);
   }, [breakpoint]);
@@ -140,41 +119,35 @@ const Header = () => {
               animate={open ? { height: "auto" } : { height: 0 }}
               transition={{ duration: 0.5, ease: [0.7, 0, 0.3, 1] }}
             >
-              <motion.div className={styles["drawer-inner"]}>
-                <AnimatePresence>
-                  {open && (
-                    <motion.div
-                      key="separator"
-                      className={styles["separator"]}
-                      initial={{ width: 0 }}
-                      animate={{ width: "100%" }}
-                      exit={{ y: -20 }}
-                      transition={{
-                        delay: 0.1,
-                        duration: 0.5,
-                        ease: [0.7, 0, 0.3, 1],
-                      }}
-                    />
-                  )}
-                  {open &&
-                    navlinks.map((navlink, index) => (
-                      <motion.div
+              <AnimatePresence>
+                {open && (
+                  <motion.div
+                    className={styles["drawer-inner"]}
+                    initial={false}
+                    animate={{ y: 0 }}
+                    exit={{ y: -20 }}
+                    transition={{
+                      duration: 0.5,
+                      ease: [0.7, 0, 0.3, 1],
+                    }}
+                  >
+                    <div className={styles["separator"]} />
+                    {navlinks.map((navlink, index) => (
+                      <div
                         key={navlink.label}
-                        variants={linkVariants}
-                        initial="initial"
-                        animate="animate"
-                        exit="exit"
-                        custom={index}
+                        style={{ animationDelay: `${0.1 * index + 0.2}s` }}
+                        className={styles["mobile-link"]}
                       >
                         <Link to={navlink.to} className={styles["navlink"]}>
                           <Typography variant="body">
                             {navlink.label}
                           </Typography>
                         </Link>
-                      </motion.div>
+                      </div>
                     ))}
-                </AnimatePresence>
-              </motion.div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </motion.nav>
           )}
         </Gutter>
