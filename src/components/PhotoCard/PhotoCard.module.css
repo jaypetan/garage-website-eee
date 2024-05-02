@@ -35,18 +35,19 @@
 
 .link {
   color: var(--body);
-  cursor: pointer;
 }
-
-/* Hover Effect */
 .link:hover {
   color: var(--body);
 }
 .link:hover .card-image {
   transform: scale(1.02);
 }
+.link:hover .card {
+  box-shadow: 0 0px 50px -12px rgb(0 0 0 / 0.4);
+}
+
 .card:hover {
-  box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0px 50px -12px rgb(0 0 0 / 0.4);
 }
 .card:hover .card-image {
   transform: scale(1.02);
@@ -59,6 +60,9 @@
 }
 
 @media (max-width: 640px) {
+  .card {
+    border-radius: 1.5rem;
+  }
   .card-wrapper {
     gap: 0.75rem;
   }
