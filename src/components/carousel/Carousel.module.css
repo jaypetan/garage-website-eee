@@ -38,6 +38,12 @@
   gap: 1.5rem;
 }
 
+.image-container {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 2rem;
+}
+
 .images {
   display: flex;
   touch-action: pan-y;
@@ -54,4 +60,10 @@
 .focus-image {
   max-width: calc(100vw - 3rem);
   max-height: calc(100vh - 3rem);
+}
+
+@media (max-width: 640px) {
+  .image-container {
+    border-radius: 1.5rem;
+  }
 }

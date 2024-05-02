@@ -77,7 +77,7 @@ const Carousel = ({ images }) => {
 
   return (
     <section className={styles["carousel-container"]}>
-      <div ref={emblaRef}>
+      <div ref={emblaRef} className={styles["image-container"]}>
         <div className={styles["images"]}>
           {images.map((imgsrc, index) => (
             <div
