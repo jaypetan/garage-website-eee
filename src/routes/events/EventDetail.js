@@ -6,7 +6,7 @@ import HeroImage from "../../components/heroImage/heroImage";
 import Typography from "../../components/typography/Typography";
 import LinkPreview from "../../components/LinkPreview/LinkPreview";
 import { API_DOMAIN } from "../../utils/Constants";
-import ImageGallery from "../../components/ImageGallery/ImageGallery";
+import Carousel from "../../components/carousel/Carousel";
 
 import styles from "./EventDetail.module.css";
 
@@ -30,7 +30,7 @@ function EventDetail() {
             <Typography variant="body">{data.description}</Typography>
             <div className={styles["gallery-box"]}>
               <Typography variant="smallHeading">Gallery</Typography>
-              {data.photos && <ImageGallery images={data.photos} />}
+              {data.photos && <Carousel images={data.photos} />}
             </div>
           </div>
         )}

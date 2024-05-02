@@ -1,8 +1,7 @@
-import React from "react";
-
 import Typography from "../typography/Typography";
 import BackButton from "../BackButton/BackButton";
 import styles from "./heroImage.module.css";
+import Image from "../image/Image";
 
 const HeroImage = ({ heading, src, subheading, objectFit = "cover" }) => {
   return (
@@ -16,11 +15,10 @@ const HeroImage = ({ heading, src, subheading, objectFit = "cover" }) => {
         </div>
         <BackButton />
       </div>
-      <img
+      <Image
+        objectFit={objectFit}
         src={src}
-        className={[styles["hero-image"], styles[objectFit]]
-          .filter(Boolean)
-          .join(" ")}
+        className={styles["hero-image"]}
         alt={"image of '" + heading + "'"}
       />
     </div>

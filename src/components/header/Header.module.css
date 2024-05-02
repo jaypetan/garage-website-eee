@@ -50,6 +50,10 @@
   background-color: transparent;
   padding: 0;
   border: none;
+  cursor: pointer;
+  border-radius: 100%;
+  width: 36px;
+  height: 36px;
 }
 
 .drawer {
@@ -75,4 +79,30 @@
   height: 1px;
   background-color: var(--outline);
   width: 0;
+  animation: grow 0.5s cubic-bezier(0.7, 0, 0.3, 1) 0.1s both;
+}
+
+.mobile-link {
+  animation: slide-in 0.5s cubic-bezier(0.33, 1, 0.68, 1);
+  animation-fill-mode: both;
+}
+
+@keyframes grow {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(30px);
+  }
+
+  to {
+    transform: translateX(0px);
+  }
 }

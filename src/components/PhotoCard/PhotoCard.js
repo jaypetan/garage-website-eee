@@ -1,18 +1,21 @@
 import { Link } from "react-router-dom"; // Import Link from React Router
 import styles from "./PhotoCard.module.css";
 import Typography from "../typography/Typography";
+import Image from "../image/Image";
 
 const Card = ({ image, topText, bottomText, to }) => {
-  const cardContent = (
-    <div className={styles["card-wrapper"]}>
+  const Comp = to ? Link : "div";
+  return (
+    <Comp
+      to={to}
+      className={[styles["card-wrapper"], to && styles["link"]]
+        .filter(Boolean)
+        .join(" ")}
+    >
       <div className={styles.card}>
-        <img
-          className={styles["card-image"]}
-          loading="lazy"
-          src={image}
-          referrerPolicy="no-referrer"
-          alt={topText ?? bottomText}
-        />
+        <div className={styles["card-image"]}>
+          <Image src={image} alt={topText ?? bottomText} />
+        </div>
         <div className={styles["text-overlay"]}>
           <Typography variant={"smallHeading"}>{topText}</Typography>
         </div>
@@ -22,15 +25,7 @@ const Card = ({ image, topText, bottomText, to }) => {
           {bottomText}
         </Typography>
       )}
-    </div>
-  );
-
-  return to ? (
-    <Link to={to} className={styles["link"]}>
-      {cardContent}
-    </Link>
-  ) : (
-    cardContent
+    </Comp>
   );
 };
 

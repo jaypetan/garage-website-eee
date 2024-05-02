@@ -24,17 +24,23 @@ const Button = ({
     .filter(Boolean)
     .join(" ");
 
-  const btn = (
-    <button className={cn} onClick={onClick} disabled={disabled} {...rest}>
+  const Comp = to ? Link : "button";
+
+  return (
+    <Comp
+      className={cn}
+      to={to}
+      onClick={onClick}
+      disabled={disabled}
+      {...rest}
+    >
       {startIcon && (
         <div className={styles["start-icon-wrapper"]}>{startIcon}</div>
       )}
       <Typography variant="body">{children}</Typography>
       {endIcon && <div className={styles["end-icon-wrapper"]}>{endIcon}</div>}
-    </button>
+    </Comp>
   );
-
-  return to ? <Link to={to}>{btn}</Link> : btn;
 };
 
 export default Button;
