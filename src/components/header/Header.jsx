@@ -78,6 +78,10 @@ const Header = () => {
       label: "Events",
       to: "/events",
     },
+    {
+      label: "Facilities",
+      to: "/facilities",
+    },
   ];
 
   useEffect(() => {

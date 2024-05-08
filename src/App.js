@@ -7,6 +7,7 @@ import EventDetail from "./routes/events/EventDetail";
 import ProjectsOverview from "./routes/projectsOverview/ProjectsOverview";
 import ProjectDetail from "./routes/projects/ProjectDetail";
 import NotFound from "./routes/notFound/NotFound";
+import Facilities from "./routes/facilities/Facilities";
 import { AnimatePresence } from "framer-motion";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path="/events/:id" element={<EventDetail />} />
           <Route path="/projects" element={<ProjectsOverview />} />
           <Route path="/projects/:id" element={<ProjectDetail />} />
+          <Route path="/facilities" element={<Facilities />} />
           <Route path="/*" element={<NotFound />} />
         </Routes>
       </AnimatePresence>

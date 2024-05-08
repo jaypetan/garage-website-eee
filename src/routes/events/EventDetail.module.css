@@ -11,7 +11,7 @@
 }
 
 /* Wide screen styling */
-@media (min-width: 1200px) {
+@media (max-width: 1200px) {
   .main-wrapper {
     gap: var(--content-gap-tablet);
   }
