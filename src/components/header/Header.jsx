@@ -8,9 +8,9 @@ import {
 } from "framer-motion";
 import Typography from "../typography/Typography";
 import useBreakpoint from "../../hooks/useBreakpoint";
-import Logo from "../../icons/header.svg";
-import Menu from "../../icons/menu.svg";
-import Close from "../../icons/close.svg";
+import { ReactComponent as Logo } from "../../icons/header.svg";
+import { ReactComponent as Menu } from "../../icons/menu.svg";
+import { ReactComponent as Close } from "../../icons/close.svg";
 import Gutter from "../pageTemplate/gutter/Gutter";
 import Modal from "../modal/Modal";
 
@@ -42,9 +42,13 @@ const MenuButton = ({ open, setOpen }) => {
       onClick={handleClick}
     >
       {open ? (
-        <motion.img src={Close} alt="Close menu icon" key="close" {...anim} />
+        <motion.div key="close" {...anim}>
+          <Close />
+        </motion.div>
       ) : (
-        <motion.img src={Menu} alt="Menu icon" key="menu" {...anim} />
+        <motion.div key="menu" {...anim}>
+          <Menu />
+        </motion.div>
       )}
     </button>
   );
@@ -78,6 +82,10 @@ const Header = () => {
       label: "Events",
       to: "/events",
     },
+    {
+      label: "Facilities",
+      to: "/facilities",
+    },
   ];
 
   useEffect(() => {
@@ -94,7 +102,7 @@ const Header = () => {
         <Gutter>
           <div className={styles["header-inner"]}>
             <Link to="/">
-              <img src={Logo} alt="Garage Logo" />
+              <Logo />
             </Link>
             {breakpoint !== "mobile" ? (
               <nav className={styles["nav"]}>
@@ -135,7 +143,7 @@ const Header = () => {
                     {navlinks.map((navlink, index) => (
                       <div
                         key={navlink.label}
-                        style={{ animationDelay: `${0.1 * index + 0.2}s` }}
+                        style={{ animationDelay: `${0.1 * index}s` }}
                         className={styles["mobile-link"]}
                       >
                         <Link to={navlink.to} className={styles["navlink"]}>

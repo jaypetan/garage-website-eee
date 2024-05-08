@@ -1,6 +1,6 @@
 import styles from "./BackButton.module.css";
 import { useNavigate } from "react-router-dom";
-import chevronLeft from "../../icons/arrow_back_ios.svg";
+import { ReactComponent as ChevronLeft } from "../../icons/arrow_back_ios.svg";
 import Button from "../button/Button";
 
 const BackButton = () => {
@@ -13,7 +13,7 @@ const BackButton = () => {
     <Button
       className={styles["detail-header-button"]}
       onClick={goBack}
-      startIcon={<img src={chevronLeft} alt="back-button" />}
+      startIcon={<ChevronLeft />}
       variant="outlined"
     >
       Back

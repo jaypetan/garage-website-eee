@@ -58,6 +58,23 @@ const Home = () => {
               </div>
             </section>
             <section className={styles["section-wrapper"]}>
+              {/* Intro section */}
+              <Typography variant="heading">Facilities</Typography>
+              <Typography variant="body">{data.facilities}</Typography>
+              <div className={styles["grid-wrapper"]}>
+                <div className={styles["facilities-images"]}>
+                  <Image src={data.facilitiesImage[0]} />
+                  <div className={styles["facilities-images-smaller"]}>
+                    <Image src={data.facilitiesImage[1]} />
+                    <Image src={data.facilitiesImage[2]} />
+                  </div>
+                </div>
+                <Button to={"/facilities"} variant="outlined">
+                  View More
+                </Button>
+              </div>
+            </section>
+            <section className={styles["section-wrapper"]}>
               <Typography variant={"heading"}>MEMBER TRACKS</Typography>
               <div className={styles["text-section"]}>
                 <Typography variant={"smallHeading"}>Ambassadors</Typography>
@@ -82,6 +99,12 @@ const Home = () => {
             </section>
             {data && (
               <section className={styles["innovators"]}>
+                <Typography
+                  variant={"smallHeading"}
+                  className={styles["tablet"]}
+                >
+                  Innovators
+                </Typography>
                 <Image
                   className={styles["innovators-image"]}
                   objectFit="contain"
@@ -90,7 +113,12 @@ const Home = () => {
                 />
                 <div className={styles["innovators-text"]}>
                   <div className={styles["text-section"]}>
-                    <Typography variant={"smallHeading"}>Innovators</Typography>
+                    <Typography
+                      variant={"smallHeading"}
+                      className={styles["tablet-hide"]}
+                    >
+                      Innovators
+                    </Typography>
                     <Typography variant={"body"}>{data.innovators}</Typography>
                     <Typography variant={"smallHeading"}>
                       Innovator's Track Recruitment
