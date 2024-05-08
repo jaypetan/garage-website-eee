@@ -83,6 +83,7 @@ const Facilities = () => {
                         key={link.label}
                         className={styles["link"]}
                         href={link.link}
+                        target="_blank"
                       >
                         <Typography variant="body">{link.label}</Typography>
                       </a>
