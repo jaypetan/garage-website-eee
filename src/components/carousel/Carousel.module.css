@@ -66,4 +66,8 @@
   .image-container {
     border-radius: 1.5rem;
   }
+  .focus-image {
+    max-width: calc(100vw - 2rem);
+    max-height: calc(100vh - 2rem);
+  }
 }

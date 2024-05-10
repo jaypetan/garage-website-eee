@@ -84,15 +84,6 @@ const Carousel = ({ images }) => {
               key={imgsrc}
               className={styles["image-slide"]}
               onClick={() => handleImageClick(imgsrc, index)}
-              style={{
-                opacity: `${
-                  Math.abs(currentIndex - index) > 1
-                    ? 0
-                    : Math.abs(currentIndex - index) > 0
-                    ? 0.5
-                    : 1
-                }`,
-              }}
             >
               <Image src={imgsrc} alt="" />
             </div>
