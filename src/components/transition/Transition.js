@@ -144,6 +144,19 @@ const Transition = ({ children, isLoading }) => {
     },
   };
 
+  const content = {
+    initial: { y: "10rem", opacity: 0 },
+    hide: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        delay: duration / 1.5,
+        duration: duration,
+        ease: [0, 0, 0, 1],
+      },
+    },
+  };
+
   return (
     <>
       <motion.div className={styles["loading-text"]} {...anim(slideText)}>
@@ -158,7 +171,7 @@ const Transition = ({ children, isLoading }) => {
       <motion.div className={styles["blue"]} {...anim(slideBlue)} />
       <motion.div className={styles["white"]} {...anim(slideWhite)} />
       <motion.div className={styles["overlay"]} {...anim(opacity)} />
-      {children}
+      <motion.main {...anim(content)}>{children}</motion.main>
     </>
   );
 };

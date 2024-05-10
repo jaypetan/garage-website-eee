@@ -11,6 +11,8 @@ import ProjectDetail from "./routes/projects/ProjectDetail";
 import NotFound from "./routes/notFound/NotFound";
 import Facilities from "./routes/facilities/Facilities";
 import { AnimatePresence } from "framer-motion";
+import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
 
 function App() {
   const location = useLocation();
@@ -27,6 +29,7 @@ function App() {
 
   return (
     <>
+      <Header />
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route exact path="/" element={<Home />} />
@@ -39,6 +42,7 @@ function App() {
           <Route path="/*" element={<NotFound />} />
         </Routes>
       </AnimatePresence>
+      <Footer />
     </>
   );
 }

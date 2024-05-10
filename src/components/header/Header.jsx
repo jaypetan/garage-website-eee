@@ -146,7 +146,11 @@ const Header = () => {
                         style={{ animationDelay: `${0.1 * index}s` }}
                         className={styles["mobile-link"]}
                       >
-                        <Link to={navlink.to} className={styles["navlink"]}>
+                        <Link
+                          to={navlink.to}
+                          className={styles["navlink"]}
+                          onClick={() => setOpen(false)}
+                        >
                           <Typography variant="body">
                             {navlink.label}
                           </Typography>
