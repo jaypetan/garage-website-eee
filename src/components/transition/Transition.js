@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import styles from "./Transition.module.css";
+import { useLayoutEffect } from "react";
 
 const Transition = ({ children, isLoading }) => {
   const anim = (variants, custom) => {
@@ -156,6 +157,11 @@ const Transition = ({ children, isLoading }) => {
       },
     },
   };
+
+  useLayoutEffect(() => {
+    // Scroll to top of page
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
