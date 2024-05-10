@@ -1,4 +1,6 @@
 import { Routes, Route, useLocation } from "react-router-dom";
+import { useEffect } from "react";
+import Lenis from "lenis";
 
 import Home from "./routes/home/Home";
 import AmbassadorDetail from "./routes/ambassadors/AmbassadorDetail";
@@ -12,6 +14,16 @@ import { AnimatePresence } from "framer-motion";
 
 function App() {
   const location = useLocation();
+  useEffect(() => {
+    const lenis = new Lenis({ duration: 0.8 });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+  }, []);
 
   return (
     <>
