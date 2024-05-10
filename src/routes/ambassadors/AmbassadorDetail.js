@@ -5,6 +5,7 @@ import Transition from "../../components/transition/Transition";
 import PageTemplate from "../../components/pageTemplate/PageTemplate";
 import useFetch from "../../hooks/useFetch";
 import { API_DOMAIN } from "../../utils/Constants";
+import PageGap from "../../components/pageGap/PageGap";
 
 function AmbassadorDetail() {
   const params = useParams();
@@ -17,14 +18,14 @@ function AmbassadorDetail() {
     <Transition isLoading={isLoading}>
       <PageTemplate>
         {data && (
-          <>
+          <PageGap>
             <HeroImage
               heading={data.name}
               src={data.coverPic}
               objectFit="contain"
             />
             <Typography variant="body">{data.description}</Typography>
-          </>
+          </PageGap>
         )}
       </PageTemplate>
     </Transition>

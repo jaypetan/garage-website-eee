@@ -1,6 +1,7 @@
 import useFetch from "../../hooks/useFetch";
 import Transition from "../../components/transition/Transition";
 import PageTemplate from "../../components/pageTemplate/PageTemplate";
+import PageGap from "../../components/pageGap/PageGap";
 import HeroImage from "../../components/heroImage/heroImage";
 import Image from "../../components/image/Image";
 import Typography from "../../components/typography/Typography";
@@ -11,9 +12,9 @@ import {
   AccordionItem,
 } from "../../components/accordion/Accordion";
 import { API_DOMAIN } from "../../utils/Constants";
+import Button from "../../components/button/Button";
 
 import styles from "./Facilities.module.css";
-import Button from "../../components/button/Button";
 
 const FacilityCard = ({ even, description, title, src, label, link }) => {
   return (
@@ -58,7 +59,7 @@ const Facilities = () => {
     <Transition isLoading={isLoading}>
       <PageTemplate>
         {data && (
-          <div className={styles["main-wrapper"]}>
+          <PageGap>
             <HeroImage heading="Facilities" src={data.coverPic} />
             {data.facilities.map((facility, index) => (
               <FacilityCard
@@ -84,6 +85,7 @@ const Facilities = () => {
                         className={styles["link"]}
                         href={link.link}
                         target="_blank"
+                        rel="noreferrer"
                       >
                         <Typography variant="body">{link.label}</Typography>
                       </a>
@@ -92,7 +94,7 @@ const Facilities = () => {
                 </AccordionContent>
               </AccordionItem>
             </AccordionRoot>
-          </div>
+          </PageGap>
         )}
       </PageTemplate>
     </Transition>

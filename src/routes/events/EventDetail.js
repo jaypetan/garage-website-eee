@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import Transition from "../../components/transition/Transition";
 import PageTemplate from "../../components/pageTemplate/PageTemplate";
+import PageGap from "../../components/pageGap/PageGap";
 import useFetch from "../../hooks/useFetch";
 import HeroImage from "../../components/heroImage/heroImage";
 import Typography from "../../components/typography/Typography";
@@ -20,7 +21,7 @@ function EventDetail() {
     <Transition isLoading={isLoading}>
       <PageTemplate>
         {data && (
-          <div className={styles["main-wrapper"]}>
+          <PageGap>
             <HeroImage
               heading={data.name}
               src={data.coverPic}
@@ -32,7 +33,7 @@ function EventDetail() {
               <Typography variant="smallHeading">Gallery</Typography>
               {data.photos && <Carousel images={data.photos} />}
             </div>
-          </div>
+          </PageGap>
         )}
       </PageTemplate>
     </Transition>

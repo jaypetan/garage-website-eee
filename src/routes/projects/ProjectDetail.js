@@ -5,9 +5,10 @@ import useFetch from "../../hooks/useFetch";
 import { API_DOMAIN } from "../../utils/Constants";
 import Transition from "../../components/transition/Transition";
 import PageTemplate from "../../components/pageTemplate/PageTemplate";
+import PageGap from "../../components/pageGap/PageGap";
+import HeroImage from "../../components/heroImage/heroImage";
 
 import styles from "./ProjectDetail.module.css";
-import HeroImage from "../../components/heroImage/heroImage";
 
 function ProjectDetail() {
   const params = useParams();
@@ -19,7 +20,7 @@ function ProjectDetail() {
     <Transition isLoading={isLoading}>
       <PageTemplate>
         {data && (
-          <div className={styles["main-wrapper"]}>
+          <PageGap>
             <HeroImage
               heading={data.name}
               src={data.coverPic}
@@ -30,7 +31,7 @@ function ProjectDetail() {
               <Typography variant="smallHeading">Gallery</Typography>
               {data.photos && <Carousel images={data.photos} />}
             </div>
-          </div>
+          </PageGap>
         )}
       </PageTemplate>
     </Transition>
