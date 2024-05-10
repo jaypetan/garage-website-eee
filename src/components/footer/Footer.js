@@ -1,6 +1,4 @@
-import React from "react";
-
-import "./Footer.css";
+import styles from "./Footer.module.css";
 import Typography from "../typography/Typography";
 
 // import icons
@@ -11,8 +9,8 @@ import github from "../../icons/github.png";
 const Footer = () => {
   return (
     <footer>
-      <div className="footer-wrapper">
-        <div className="texts">
+      <div className={styles["footer-wrapper"]}>
+        <div className={styles["texts"]}>
           <Typography variant="body">Garage@EEE</Typography>
           <div>
             <Typography variant="body">
@@ -27,12 +25,10 @@ const Footer = () => {
             <Typography variant="body">S1-B3c-26</Typography>
           </div>
         </div>
-        <div className="social-media">
+        <div className={styles["social-media"]}>
           <Typography variant="body">Follow us on:</Typography>
-          <div className="media-buttons">
-            {/* links are just mock ups */}
+          <div className={styles["media-buttons"]}>
             <a
-              className="linkedin"
               href="https://www.linkedin.com/company/garage-eee/"
               target="_blank"
               rel="noreferrer"
@@ -40,7 +36,6 @@ const Footer = () => {
               <img src={linkedin} alt="garage linkedin link" />
             </a>
             <a
-              className="instagram"
               href="https://www.instagram.com/garage_at_eee/"
               target="_blank"
               rel="noreferrer"
@@ -48,7 +43,6 @@ const Footer = () => {
               <img src={instagram} alt="garage instagram link" />
             </a>
             <a
-              className="github"
               href="https://github.com/Garage-at-EEE"
               target="_blank"
               rel="noreferrer"
