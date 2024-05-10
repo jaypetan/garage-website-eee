@@ -1,6 +1,6 @@
 import { Routes, Route, useLocation } from "react-router-dom";
-import { useEffect } from "react";
-import Lenis from "lenis";
+import { useEffect, useLayoutEffect } from "react";
+import { ReactLenis } from "lenis/react";
 
 import Home from "./routes/home/Home";
 import AmbassadorDetail from "./routes/ambassadors/AmbassadorDetail";
@@ -10,25 +10,16 @@ import ProjectsOverview from "./routes/projectsOverview/ProjectsOverview";
 import ProjectDetail from "./routes/projects/ProjectDetail";
 import NotFound from "./routes/notFound/NotFound";
 import Facilities from "./routes/facilities/Facilities";
+
 import { AnimatePresence } from "framer-motion";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 
 function App() {
   const location = useLocation();
-  useEffect(() => {
-    const lenis = new Lenis({ duration: 0.8 });
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
-  }, []);
 
   return (
-    <>
+    <ReactLenis root options={{ duration: 0.8 }}>
       <Header />
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
@@ -43,7 +34,7 @@ function App() {
         </Routes>
       </AnimatePresence>
       <Footer />
-    </>
+    </ReactLenis>
   );
 }
 

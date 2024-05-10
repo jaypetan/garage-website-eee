@@ -1,3 +1,4 @@
+import { useLenis } from "lenis/react";
 import BackButton from "../../components/BackButton/BackButton";
 import Grid from "../../components/grid/Grid";
 import Card from "../../components/PhotoCard/PhotoCard";
@@ -7,6 +8,7 @@ import Button from "../button/Button";
 import styles from "./OverviewPage.module.css";
 
 const OverviewPage = ({ heading, data }) => {
+  const lenis = useLenis();
   return (
     <div className={styles["content-wrapper"]}>
       <div className={styles["heading-space"]}>
@@ -25,7 +27,7 @@ const OverviewPage = ({ heading, data }) => {
               />
             ))}
           </Grid>
-          <Button onClick={() => window.scrollTo(0, 0)} variant="outlined">
+          <Button onClick={() => lenis.scrollTo(0, 0)} variant="outlined">
             Back to top
           </Button>
         </>
