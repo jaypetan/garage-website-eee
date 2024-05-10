@@ -7,7 +7,7 @@ import Button from "../../components/button/Button";
 function NotFound() {
   return (
     <Transition isLoading={false}>
-      <PageTemplate className={styles["template"]}>
+      <PageTemplate>
         <div className={styles["center"]}>
           <Typography variant="banner">404</Typography>
           <Typography variant="heading" textAlign="center">

@@ -1,6 +1,7 @@
 .wrapper {
   padding-top: var(--top-padding);
   padding-bottom: var(--content-gap-desktop);
+  min-height: 100vh;
 }
 
 @media (max-width: 1200px) {
