@@ -33,18 +33,14 @@
     height: auto;
     min-height: unset;
   }
+  .hero-image {
+    max-height: 820px;
+  }
 }
 
 @media (max-width: 640px) {
   .hero-image {
     min-height: 320px;
+    max-height: 480px;
   }
-}
-
-.cover {
-  object-fit: cover;
-}
-
-.contain {
-  object-fit: contain;
 }
