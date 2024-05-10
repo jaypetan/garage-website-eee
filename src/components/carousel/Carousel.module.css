@@ -59,7 +59,7 @@
 
 .focus-image {
   max-width: calc(100vw - 3rem);
-  max-height: calc(100vh - 3rem);
+  max-height: calc(100svh - 3rem);
 }
 
 @media (max-width: 640px) {
@@ -68,6 +68,6 @@
   }
   .focus-image {
     max-width: calc(100vw - 2rem);
-    max-height: calc(100vh - 2rem);
+    max-height: calc(100svh - 2rem);
   }
 }
