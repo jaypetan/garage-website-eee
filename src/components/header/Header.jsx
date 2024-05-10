@@ -73,6 +73,10 @@ const Header = () => {
     else if (y < topPaddings[breakpoint] && shadow) setShadow(false);
   });
 
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   const navlinks = [
     {
       label: "Projects",
@@ -86,10 +90,14 @@ const Header = () => {
       label: "Facilities",
       to: "/facilities",
     },
+    {
+      label: "Newsletter",
+      to: "/newsletter",
+    },
   ];
 
   useEffect(() => {
-    if (breakpoint !== "mobile") setOpen(false);
+    if (breakpoint !== "mobile") handleClose();
   }, [breakpoint]);
 
   return (
@@ -101,7 +109,7 @@ const Header = () => {
       >
         <Gutter>
           <div className={styles["header-inner"]}>
-            <Link to="/">
+            <Link to="/" onClick={handleClose}>
               <Logo />
             </Link>
             {breakpoint !== "mobile" ? (
@@ -149,7 +157,7 @@ const Header = () => {
                         <Link
                           to={navlink.to}
                           className={styles["navlink"]}
-                          onClick={() => setOpen(false)}
+                          onClick={handleClose}
                         >
                           <Typography variant="body">
                             {navlink.label}
@@ -164,7 +172,7 @@ const Header = () => {
           )}
         </Gutter>
       </header>
-      <Modal open={open} onClose={() => setOpen(false)} below />
+      <Modal open={open} onClose={handleClose} below />
     </>
   );
 };

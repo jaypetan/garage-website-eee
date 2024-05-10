@@ -10,6 +10,7 @@ import styles from "./Home.module.css";
 import Button from "../../components/button/Button";
 import LoadingSpinner from "../../components/loadingSpinner/LoadingSpinner";
 import Image from "../../components/image/Image";
+import Newsletter from "../../components/newsletter/Newsletter";
 
 const Home = () => {
   const { data, isLoading } = useFetch({
@@ -23,6 +24,9 @@ const Home = () => {
   });
   const { data: eventData } = useFetch({
     url: API_DOMAIN + "?type=events&fields=name,coverPic",
+  });
+  const { data: newsletterData } = useFetch({
+    url: API_DOMAIN + "?type=newsletter",
   });
 
   return (
@@ -171,6 +175,36 @@ const Home = () => {
                     />
                   ))}
                 </Grid>
+              ) : (
+                <div className={styles["loading-wrapper"]}>
+                  <LoadingSpinner />
+                </div>
+              )}
+            </section>
+
+            <section className={styles["section-wrapper"]}>
+              <Typography variant={"heading"}>Behind The Rollerdoor</Typography>
+              <Typography variant="body">{data.newsletter}</Typography>
+              {newsletterData ? (
+                <div className={styles["grid-wrapper"]}>
+                  <div className={styles["issues"]}>
+                    <Typography variant="smallHeading">
+                      Recent Issues
+                    </Typography>
+                  </div>
+                  {newsletterData.slice(0, 3).map((issue) => (
+                    <Newsletter
+                      key={issue.name}
+                      src={issue.image}
+                      link={issue.link}
+                      title={issue.name}
+                      date={issue.date}
+                    />
+                  ))}
+                  <Button to={"/newsletter"} variant="outlined">
+                    View All
+                  </Button>
+                </div>
               ) : (
                 <div className={styles["loading-wrapper"]}>
                   <LoadingSpinner />
