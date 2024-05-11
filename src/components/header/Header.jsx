@@ -109,7 +109,7 @@ const Header = () => {
       >
         <Gutter>
           <div className={styles["header-inner"]}>
-            <Link to="/" onClick={handleClose}>
+            <Link to="/" onClick={handleClose} className={styles["logo"]}>
               <Logo />
             </Link>
             {breakpoint !== "mobile" ? (

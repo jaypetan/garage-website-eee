@@ -13,8 +13,12 @@
   justify-content: space-between;
   align-items: center;
   gap: var(--content-gap-mobile);
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.logo {
+  height: 36px;
 }
 
 .nav {
@@ -62,7 +66,7 @@
 }
 
 .drawer-inner {
-  padding-top: 0.5rem;
+  padding-top: 0.75rem;
   padding-bottom: 1.5rem;
   display: flex;
   flex-direction: column;
