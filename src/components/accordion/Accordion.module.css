@@ -51,7 +51,15 @@
 .accordion-content-wrapper {
   padding: 1rem 2rem;
   padding-top: 0.5rem;
+}
+
+.accordion-content[data-state="open"] > .accordion-content-wrapper {
   animation: moveIn 0.3s cubic-bezier(0, 0, 0, 1);
+  animation-fill-mode: backwards;
+}
+.accordion-content[data-state="closed"] > .accordion-content-wrapper {
+  animation: moveOut 0.3s cubic-bezier(0, 0, 0, 1);
+  animation-fill-mode: forwards;
 }
 
 .accordion-chevron {
@@ -84,6 +92,15 @@
     transform: translateY(2rem);
   }
   to {
-    transform: translateY(0);
+    transform: unset;
+  }
+}
+
+@keyframes moveOut {
+  from {
+    transform: unset;
+  }
+  to {
+    transform: translateY(2rem);
   }
 }
