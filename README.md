@@ -7,6 +7,6 @@ This is the repository for the frontend code of Garage@EEE's [website](https://g
 To get started running this locally, follow the steps below:
 
 - Clone the repo
-- Open the terminal in the root folder and type `npm install`
-- Run `npm run start`
+- Install all dependencies needed using `npm install`
+- Run the development building with `npm run start`
 - Website should be running on `localhost:3000`
