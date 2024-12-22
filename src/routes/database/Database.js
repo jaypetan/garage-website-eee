@@ -7,9 +7,7 @@ import BackButton from "../../components/BackButton/BackButton";
 
 import styles from "./Database.module.css";
 
-// Keep in mind:
-// Post/Redirect/Get
-// CSRF Token
+
 function Database() {
   // const { data, isLoading } = useFetch({
   //   url: API_DOMAIN + "?type=home",
@@ -27,7 +25,7 @@ function Database() {
             <BackButton />
           </div>
 
-          <Typography variant="body">{"Welcome to the database filled with items"}</Typography>
+          <Typography variant="body">{"Welcome to the database filled with items, this is just a Placeholder"}</Typography>
         </div>
       </PageTemplate>
     </Transition>
