@@ -17,12 +17,15 @@ import Login from "./routes/login/Login";
 import { AnimatePresence } from "framer-motion";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
+import AuthProvider from "./contexts/AuthProvider";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 
 function App() {
   const location = useLocation();
 
   return (
     <ReactLenis root options={{ duration: 0.8 }}>
+      <AuthProvider>
       <Header />
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
@@ -34,12 +37,15 @@ function App() {
           <Route path="/projects/:id" element={<ProjectDetail />} />
           <Route path="/facilities" element={<Facilities />} />
           <Route path="/newsletter" element={<NewsletterPage />} />
-          <Route path="/database" element={<Database />} />
           <Route path="/login" element={<Login />} />
+          <Route element={<PrivateRoute name={"Garage Database"} to="/database"/>}>
+            <Route path="/database" element={<Database />} />
+          </Route>
           <Route path="/*" element={<NotFound />} />
         </Routes>
       </AnimatePresence>
       <Footer />
+      </AuthProvider>
     </ReactLenis>
   );
 }

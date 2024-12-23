@@ -96,7 +96,7 @@ const Header = () => {
     },
     {
       label: "Database",
-      to: "/login",
+      to: "/database",
     },
   ];
 

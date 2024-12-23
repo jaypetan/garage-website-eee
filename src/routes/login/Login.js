@@ -1,23 +1,23 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { API_DOMAIN } from "../../utils/Constants";
 import Transition from "../../components/transition/Transition";
 import PageTemplate from "../../components/pageTemplate/PageTemplate";
 import Typography from "../../components/typography/Typography";
 import BackButton from "../../components/BackButton/BackButton";
-import axios from 'axios';
-
-import styles from "./Login.module.css";
 import Button from "../../components/button/Button";
+import { useAuth } from "../../contexts/AuthProvider";
 
-// Keep in mind:
-// CSRF
+import axios from 'axios';
+import styles from "./Login.module.css";
+
 function Login() {
   const [matric, setMatric] = useState('');
   const [passcode, setPasscode] = useState('');
   const navigate = useNavigate();
+  const location = useLocation();
+  const auth = useAuth();
 
-  // Following code imported from garage-shop repo
   const handlePasscodeChange = (e) => {
     // Ensure passcode is in the format DDMM (e.g., 1234)
     const inputPasscode = e.target.value;
@@ -35,7 +35,7 @@ function Login() {
       },
     };
 
-    console.log(`Attempting to log in with matric: ${matric} and passcode: ${passcode}`);
+    console.log(`Attempting to log in with matric: ${matric} and passcode: ${passcode}`); //Debug line
     
     try {
       const response = await axios.post(
@@ -46,20 +46,14 @@ function Login() {
 
       console.log('Response:', response); //Debug line
       
-      // Following code imported from garage-shop repo
-      // Check for successful login response 
       if (response.data.status === "DATA RETRIEVAL SUCCESSFUL") {
-        // If the data retrieval is successful, navigate to the Profile page
-        navigate('/database', { 
-          state: { user: response.data.info, 
-          //points: response.data.info.currentInnocredit, 
-          passcode: passcode
-        } });
+        //Upon success, provide AuthContext with responseData to provide auth context to entire App
+        auth.loginAction(response.data.info); 
+        navigate(location.state?.to);
       } else {
         // TODO: Handle unsuccessful login
         //setLoginError("Wrong username or passcode.");
         //setShowModal(true);
-
       }
     } catch (error) {
       console.error("Error logging in", error)
@@ -73,7 +67,7 @@ function Login() {
 
           <div className={styles["heading-space"]}>
             <div>
-              <Typography variant="heading">{"Garage Database"}</Typography>
+              <Typography variant="heading">{location.state?.name}</Typography>
             </div>
             <BackButton />
           </div>
