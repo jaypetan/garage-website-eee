@@ -39,7 +39,7 @@ function Login() {
     
     try {
       const response = await axios.post(
-        'https://script.google.com/macros/s/AKfycbwlj3aFRI1IMJD7cBLx-roRpPYNjj3ZSdIyP9szlaMW9osKFntxdpthA5-GLOMoOa6urg/exec', 
+        API_DOMAIN, 
         {matric: matric, passcode:passcode, type:"userdata"}, 
         config,
       );
