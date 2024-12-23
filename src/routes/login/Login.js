@@ -27,17 +27,22 @@ function Login() {
 
   const handleSubmit = async () => {
     const config = {
-      headers: {
-        "Content-Type": "text/plain;charset=utf-8",
-      },
       redirect: "follow",
       mode: "cors",
       method: "POST",
+      headers: {
+        "Content-Type": "text/plain;charset=utf-8",
+      },
     };
 
+    console.log(`Attempting to log in with matric: ${matric} and passcode: ${passcode}`);
+    
     try {
-      // TODO: Create backend auth on AppScript to verify input
-      const response = await axios.post(API_DOMAIN, {matric, passcode}, config);
+      const response = await axios.post(
+        'https://script.google.com/macros/s/AKfycbwlj3aFRI1IMJD7cBLx-roRpPYNjj3ZSdIyP9szlaMW9osKFntxdpthA5-GLOMoOa6urg/exec', 
+        {matric: matric, passcode:passcode, type:"userdata"}, 
+        config,
+      );
 
       console.log('Response:', response); //Debug line
       
@@ -47,7 +52,7 @@ function Login() {
         // If the data retrieval is successful, navigate to the Profile page
         navigate('/database', { 
           state: { user: response.data.info, 
-          points: response.data.info.currentInnocredit, 
+          //points: response.data.info.currentInnocredit, 
           passcode: passcode
         } });
       } else {
@@ -59,7 +64,6 @@ function Login() {
     } catch (error) {
       console.error("Error logging in", error)
     }
-    //navigate('/database');
   };
 
   return (
@@ -74,7 +78,7 @@ function Login() {
             <BackButton />
           </div>
 
-          <form className={styles["form"]}>
+          <form className={styles["form"]} onSubmit={(e) => {e.preventDefault()}}>
 
             <Typography variant="body">{"Matriculation Number:"}</Typography>
             <div>
