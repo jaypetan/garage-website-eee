@@ -14,9 +14,16 @@ import styles from "./Login.module.css";
 function Login() {
   const [matric, setMatric] = useState('');
   const [passcode, setPasscode] = useState('');
+  const [isDenied, setDenied] = useState(false);
+  const [isLoading, setLoading] = useState(false);
   const navigate = useNavigate();
-  const location = useLocation();
+  const location = useLocation(); //State obtained from PrivateRoute 
   const auth = useAuth();
+
+  //If accessed through PrivateRoute Navigate => location.state contains data
+  //Else accessed through /login url => default redirect to '/' and title: "login"
+  const ROUTE_DESTINATION = (location.state?.to || "/");
+  const ROUTE_TITLEHEADING = (location.state?.name || "Login");
 
   const handlePasscodeChange = (e) => {
     // Ensure passcode is in the format DDMM (e.g., 1234)
@@ -38,6 +45,8 @@ function Login() {
     console.log(`Attempting to log in with matric: ${matric} and passcode: ${passcode}`); //Debug line
     
     try {
+      setLoading(true);
+
       const response = await axios.post(
         API_DOMAIN, 
         {matric: matric, passcode:passcode, type:"userdata"}, 
@@ -45,18 +54,18 @@ function Login() {
       );
 
       console.log('Response:', response); //Debug line
+
+      setLoading(false);
       
       if (response.data.status === "DATA RETRIEVAL SUCCESSFUL") {
-        //Upon success, provide AuthContext with responseData to provide auth context to entire App
+        //Upon success, update AuthContext with responseData to provide auth context to entire App
         auth.loginAction(response.data.info); 
-        navigate(location.state?.to);
+        navigate(ROUTE_DESTINATION);
       } else {
-        // TODO: Handle unsuccessful login
-        //setLoginError("Wrong username or passcode.");
-        //setShowModal(true);
+        setDenied(true);
       }
     } catch (error) {
-      console.error("Error logging in", error)
+      console.error("Error logging in", error);
     }
   };
 
@@ -67,36 +76,59 @@ function Login() {
 
           <div className={styles["heading-space"]}>
             <div>
-              <Typography variant="heading">{location.state?.name}</Typography>
+              <Typography variant="heading">{ROUTE_TITLEHEADING}</Typography>
             </div>
             <BackButton />
           </div>
 
           <form className={styles["form"]} onSubmit={(e) => {e.preventDefault()}}>
 
-            <Typography variant="body">{"Matriculation Number:"}</Typography>
-            <div>
-              <input 
-                type="text" 
-                placeholder="eg. U123456789A"
-                value={matric}
-                onChange={(e) => setMatric(e.target.value)}
-              />
+            <div className={styles["form-item"]}>
+              <Typography variant="body">{"Matriculation Number:"}</Typography>
+                <input
+                  className={ (isDenied ?
+                    styles["form-input-invalid"]:
+                    styles["form-input"]
+                  )}
+                  type="text" 
+                  placeholder="eg. U123456789A"
+                  value={matric}
+                  onChange={(e) => setMatric(e.target.value)}
+                  required
+                />
             </div>
 
-            <Typography variant="body">{"Passcode (DDMM):"}</Typography>
-            <div>
-              <input 
-                type="text" 
-                placeholder="eg. 1911"
-                value={passcode}
-                onChange={handlePasscodeChange}
-              />
+            <div className={styles["form-item"]}>
+              <Typography variant="body">{"Passcode (DDMM):"}</Typography>
+                <input 
+                  className={ (isDenied ?
+                    styles["form-input-invalid"]:
+                    styles["form-input"]
+                  )}
+                  type="password" 
+                  placeholder="eg. 1911"
+                  value={passcode}
+                  onChange={handlePasscodeChange}
+                  required
+                  minLength={4}
+                />
             </div>
+            
+            <Typography variant="body" className={(isDenied ? styles["error-message"] : styles["hidden"])}>
+              {"Invalid matriculation number or passcode"}
+            </Typography>
 
-            <Button onClick={handleSubmit}>
-              {"Login"}
-            </Button>
+            {isLoading ? 
+                (
+                  <Button>
+                    {"Loading..."}
+                  </Button>
+                ) : (
+                  <Button onClick={handleSubmit}>
+                    {"Login"}
+                  </Button>
+                )
+              }
             
           </form>
 

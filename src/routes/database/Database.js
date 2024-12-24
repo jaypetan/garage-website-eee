@@ -4,6 +4,7 @@ import Transition from "../../components/transition/Transition";
 import PageTemplate from "../../components/pageTemplate/PageTemplate";
 import Typography from "../../components/typography/Typography";
 import BackButton from "../../components/BackButton/BackButton";
+import { useAuth } from "../../contexts/AuthProvider";
 
 import styles from "./Database.module.css";
 
@@ -12,6 +13,10 @@ function Database() {
   // const { data, isLoading } = useFetch({
   //   url: API_DOMAIN + "?type=home",
   // });
+  const auth = useAuth();
+  const user = {name:auth.user, matric:auth.matric};
+
+  const text = `Welcome ${user.name} (${user.matric}) to the Garage@EEE Database!`
 
   return (
     <Transition>
@@ -25,7 +30,7 @@ function Database() {
             <BackButton />
           </div>
 
-          <Typography variant="body">{"Welcome to the database filled with items, this is just a Placeholder"}</Typography>
+          <Typography variant="body">{text}</Typography>
         </div>
       </PageTemplate>
     </Transition>
