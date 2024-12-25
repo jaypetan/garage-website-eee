@@ -7,6 +7,7 @@ import Typography from "../../components/typography/Typography";
 import BackButton from "../../components/BackButton/BackButton";
 import Button from "../../components/button/Button";
 import { useAuth } from "../../contexts/AuthProvider";
+import LoadingSpinner from "../../components/loadingSpinner/LoadingSpinner";
 
 import axios from 'axios';
 import styles from "./Login.module.css";
@@ -120,9 +121,7 @@ function Login() {
 
             {isLoading ? 
                 (
-                  <Button>
-                    {"Loading..."}
-                  </Button>
+                  <LoadingSpinner />
                 ) : (
                   <Button onClick={handleSubmit}>
                     {"Login"}
