@@ -1,5 +1,4 @@
 import { Routes, Route, useLocation } from "react-router-dom";
-import { useEffect, useLayoutEffect } from "react";
 import { ReactLenis } from "lenis/react";
 
 import Home from "./routes/home/Home";
@@ -38,9 +37,12 @@ function App() {
           <Route path="/facilities" element={<Facilities />} />
           <Route path="/newsletter" element={<NewsletterPage />} />
           <Route path="/login" element={<Login />} />
-          <Route element={<PrivateRoute name={"Member Database"} to="/database"/>}>
-            <Route path="/database" element={<Database />} />
-          </Route>
+          <Route path="/database" element={
+              <PrivateRoute loginPageTitle="Member Database" loginRedirect="/database">
+                <Database />
+              </PrivateRoute>
+            }
+          />
           <Route path="/*" element={<NotFound />} />
         </Routes>
       </AnimatePresence>
