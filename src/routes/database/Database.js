@@ -25,7 +25,7 @@ function Database() {
 
           <div className={styles["heading-space"]}>
             <div>
-              <Typography variant="heading">{"Garage Database"}</Typography>
+              <Typography variant="heading">{"Member Database"}</Typography>
             </div>
             <BackButton />
           </div>

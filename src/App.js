@@ -38,7 +38,7 @@ function App() {
           <Route path="/facilities" element={<Facilities />} />
           <Route path="/newsletter" element={<NewsletterPage />} />
           <Route path="/login" element={<Login />} />
-          <Route element={<PrivateRoute name={"Garage Database"} to="/database"/>}>
+          <Route element={<PrivateRoute name={"Member Database"} to="/database"/>}>
             <Route path="/database" element={<Database />} />
           </Route>
           <Route path="/*" element={<NotFound />} />
