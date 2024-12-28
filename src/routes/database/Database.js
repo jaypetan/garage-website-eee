@@ -10,11 +10,13 @@ import styles from "./Database.module.css";
 
 
 function Database() {
-  // const { data, isLoading } = useFetch({
-  //   url: API_DOMAIN + "?type=home",
-  // });
-  const auth = useAuth();
-  const user = {name:auth.user, matric:auth.matric};
+  const { matric, name, token } = useAuth();
+  const user = {name:name, matric:matric};
+  const { data, isLoading, error } = useFetch({
+    url: API_DOMAIN + "?type=database&token=" + token, //Token REQUIRED to access
+  });
+  
+  console.log(error); //Debug line
 
   const text = `Welcome ${user.name} (${user.matric}) to the Garage@EEE Database!`
 

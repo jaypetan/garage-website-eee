@@ -60,7 +60,7 @@ function Login() {
       
       if (response.data.status === "DATA RETRIEVAL SUCCESSFUL") {
         //Upon success, update AuthContext with responseData to provide auth context to entire App
-        auth.loginAction(response.data.info); 
+        auth.loginAction(response.data); 
         navigate(ROUTE_DESTINATION);
       } else {
         setDenied(true);

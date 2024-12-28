@@ -41,8 +41,7 @@ function App() {
               <PrivateRoute loginPageTitle="Member Database" loginRedirect="/database">
                 <Database />
               </PrivateRoute>
-            }
-          />
+          }/>
           <Route path="/*" element={<NotFound />} />
         </Routes>
       </AnimatePresence>
