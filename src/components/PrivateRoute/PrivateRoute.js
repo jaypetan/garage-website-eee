@@ -5,7 +5,7 @@ import { useAuth } from "../../contexts/AuthProvider";
 // to: /... route to navigate to after login 
 const PrivateRoute = ({children, loginPageTitle, loginRedirect}) => {
     const auth = useAuth();
-    if (!auth.user) return <Navigate to="/login" state={{name:loginPageTitle, to:loginRedirect}}/>;
+    if (!auth.token) return <Navigate to="/login" state={{name:loginPageTitle, to:loginRedirect}}/>;
     return children;
   };
 
