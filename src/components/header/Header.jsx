@@ -64,7 +64,7 @@ const Header = () => {
   const { scrollY } = useScroll();
   const [shadow, setShadow] = useState(false);
 
-  const { user, logoutAction } = useAuth();
+  const { user } = useAuth();
 
   const topPaddings = {
     desktop: 60,
