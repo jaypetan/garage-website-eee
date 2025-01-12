@@ -26,7 +26,6 @@ const LoginMenu = ({ protected_navlinks }) => {
   }
 
   return (
-    <div>
       <div className={styles["navlink"]} onMouseEnter={handleOpen} onMouseLeave={handleClose}>
         <Link className={styles["navlink"]}>
           <Typography variant="body">{user}<ArrowDown /></Typography>
@@ -52,7 +51,6 @@ const LoginMenu = ({ protected_navlinks }) => {
           </div>
         }
       </div>
-    </div>
   );
 };
 
