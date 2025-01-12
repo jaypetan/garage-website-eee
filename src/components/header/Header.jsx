@@ -193,6 +193,25 @@ const Header = () => {
                         </Link>
                       </div>
                     ))}
+                    <div
+                      key="Login"
+                      style={{ animationDelay: `${0.1 * navlinks.length}s` }}
+                      className={styles["mobile-link"]}
+                    >
+                      {user===null ? (
+                        <Link
+                          to="/login"
+                          className={styles["navlink"]}
+                          onClick={handleClose}
+                        >
+                          <Typography variant="body">
+                            Login
+                          </Typography>
+                        </Link>
+                      ):(
+                        <LoginMenu protected_navlinks={protected_navlinks}/>
+                      )}
+                    </div>
                   </motion.div>
                 )}
               </AnimatePresence>

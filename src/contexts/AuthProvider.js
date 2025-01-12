@@ -22,7 +22,6 @@ function AuthProvider({ children }) {
         setMatric("");
         setToken("");
         navigate("/");
-        window.location.reload();
     }
 
     return (
