@@ -20,9 +20,9 @@ const LoginMenu = ({ protected_navlinks }) => {
   }
 
   const handleLogout = (e) => {
+    window.location.reload();
     setOpen(false);
     logoutAction();
-    window.location.reload();
   }
 
   return (
