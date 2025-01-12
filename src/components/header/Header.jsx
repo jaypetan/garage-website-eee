@@ -13,6 +13,8 @@ import { ReactComponent as Menu } from "../../icons/menu.svg";
 import { ReactComponent as Close } from "../../icons/close.svg";
 import Gutter from "../pageTemplate/gutter/Gutter";
 import Modal from "../modal/Modal";
+import { useAuth } from "../../contexts/AuthProvider";
+import LoginMenu from "./LoginMenu";
 
 import styles from "./Header.module.css";
 
@@ -62,6 +64,8 @@ const Header = () => {
   const { scrollY } = useScroll();
   const [shadow, setShadow] = useState(false);
 
+  const { user, logoutAction } = useAuth();
+
   const topPaddings = {
     desktop: 60,
     tablet: 60,
@@ -93,6 +97,13 @@ const Header = () => {
     {
       label: "Newsletter",
       to: "/newsletter",
+    },
+  ];
+
+  const protected_navlinks = [
+    {
+      label: "Shop",
+      to: "/shop",
     },
     {
       label: "Database",
@@ -127,6 +138,19 @@ const Header = () => {
                     <Typography variant="body">{navlink.label}</Typography>
                   </Link>
                 ))}
+
+                {user === null ? (
+                  <Link
+                    key="Login"
+                    to="/login"
+                    className={styles["navlink"]}
+                  >
+                    <Typography variant="body">Login</Typography>
+                  </Link>
+                  ) : (
+                    <LoginMenu protected_navlinks={protected_navlinks}/>
+                  )
+                }
               </nav>
             ) : (
               <MenuButton open={open} setOpen={setOpen} />

@@ -91,6 +91,15 @@
   animation-fill-mode: both;
 }
 
+.login-menu {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  right: 0;
+  left: auto;
+}
+
 @keyframes grow {
   from {
     width: 0%;
