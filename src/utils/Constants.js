@@ -1,2 +1,2 @@
 export const API_DOMAIN =
-  "https://script.google.com/macros/s/AKfycbwpBDp51U6tRBM9MC_3-QYAOSsEoyoYtcwWOWxXBwy8FhcEy7FcltekRybuZOfmfv3EgQ/exec";
+  "https://script.google.com/macros/s/AKfycbxooNFuPLMU2fSji-2U4THouVRdbWEJuT0e8Zs0JRMUh50TWveQdS4frPUEYcoeQhkDvg/exec"
