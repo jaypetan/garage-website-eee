@@ -63,12 +63,12 @@ Step 2: Assign a `variable` to useAuth() \
 e.g.
 
     const auth = useAuth();
-    console.log(auth.user); //Prints current user to console
+    console.log(auth.name); //Prints current user to console
 
 or 
 
-    const { matric, user, token, loginAction, logoutAction } = useAuth();
-    console.log(user); //Prints current user to console
+    const { matric, name, token, loginAction, logoutAction } = useAuth();
+    console.log(name); //Prints current user to console
 
 #### Sending GET Request for Protected Data (Database/Shop)
 Using `useFetch` hook, use url: API_DOMAIN + "?type=...&token=" + token (acquired from above)
@@ -80,7 +80,7 @@ Using `useFetch` hook, use url: API_DOMAIN + "?type=...&token=" + token (acquire
 | Props | Description |
 | ------ | ------ |
 | `children` | Destination route component (e.g `<Database />`, see App.js for example) |
-| `loginPageTitle` | Heading/Title login page will display above form |
+| `loginPageTitle` | Heading/Title login page will display above form (set to `Member Login` now)|
 | `loginRedirect` | URL of destination route component that login will redirect to after success |
 
 ---

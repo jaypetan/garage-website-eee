@@ -64,7 +64,7 @@ const Header = () => {
   const { scrollY } = useScroll();
   const [shadow, setShadow] = useState(false);
 
-  const { user } = useAuth();
+  const { name } = useAuth();
 
   const topPaddings = {
     desktop: 60,
@@ -139,7 +139,7 @@ const Header = () => {
                   </Link>
                 ))}
 
-                {user === null ? (
+                {name === null ? (
                   <Link
                     key="Login"
                     to="/login"
@@ -198,7 +198,7 @@ const Header = () => {
                       style={{ animationDelay: `${0.1 * navlinks.length}s` }}
                       className={styles["mobile-link"]}
                     >
-                      {user===null ? (
+                      {name===null ? (
                         <Link
                           to="/login"
                           className={styles["navlink"]}

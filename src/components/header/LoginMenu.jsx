@@ -8,7 +8,7 @@ import styles from "./Header.module.css";
 
 const LoginMenu = ({ protected_navlinks }) => {
   const [open, setOpen] = useState(false);
-  const { user, logoutAction } = useAuth();
+  const { name, logoutAction } = useAuth();
   const breakpoint = useBreakpoint();
 
   const handleOpen = (e) => {
@@ -33,8 +33,7 @@ const LoginMenu = ({ protected_navlinks }) => {
     >
       <Link className={styles["navlink"]}> 
         <Typography variant="body">
-          {user}
-          <ArrowDown />
+          {name} <ArrowDown />
         </Typography>
       </Link>
 

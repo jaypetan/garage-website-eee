@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 const AuthContext = createContext();
 
 function AuthProvider({ children }) {
-    const [user, setUser] = useState(null);
+    const [name, setName] = useState(null);
     const [matric, setMatric] = useState("");
     const [token, setToken] = useState("");
     const navigate = useNavigate();
@@ -12,20 +12,20 @@ function AuthProvider({ children }) {
     const loginAction = (responseData) => {
         const data = responseData.info;
         const jwt = responseData.token;
-        setUser(data.name);
+        setName(data.name);
         setMatric(data.matricNumber);
         setToken(jwt);
     }
 
     const logoutAction = () => {
-        setUser(null);
+        setName(null);
         setMatric("");
         setToken("");
         navigate("/");
     }
 
     return (
-    <AuthContext.Provider value = {{ matric, user, token, loginAction, logoutAction }}>
+    <AuthContext.Provider value = {{ matric, name, token, loginAction, logoutAction }}>
         {children}
     </AuthContext.Provider>
     )
