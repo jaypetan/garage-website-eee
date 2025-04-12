@@ -127,6 +127,8 @@ const Header = () => {
             <Link to="/" onClick={handleClose} className={styles["logo"]}>
               <Logo />
             </Link>
+
+            {/* DESKTOP/TABLET HEADER */}
             {breakpoint !== "mobile" ? (
               <nav className={styles["nav"]}>
                 {navlinks.map((navlink) => (
@@ -139,6 +141,7 @@ const Header = () => {
                   </Link>
                 ))}
 
+                {/* LAST Link in Header => Login if unauth | {name} if auth*/}
                 {name === null ? (
                   <Link
                     key="Login"
@@ -156,6 +159,8 @@ const Header = () => {
               <MenuButton open={open} setOpen={setOpen} />
             )}
           </div>
+
+          {/* MOBILE HEADER */}
           {breakpoint === "mobile" && (
             <motion.nav
               className={styles["drawer"]}
@@ -193,6 +198,8 @@ const Header = () => {
                         </Link>
                       </div>
                     ))}
+
+                    {/* LAST Link in Header => Login if unauth | {name} if auth*/}
                     <div
                       key="Login"
                       style={{ animationDelay: `${0.1 * navlinks.length}s` }}
