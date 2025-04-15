@@ -143,14 +143,14 @@ const Home = () => {
               {projectData ? (
                 <div className={styles["grid-wrapper"]}>
                   <Grid>
-                    {projectData.map((card, index) => (
-                      <Card
-                        key={card.name}
-                        image={card.coverPic}
-                        to={"projects/" + index}
-                        bottomText={card.name}
-                      />
-                    ))}
+                  {projectData.slice(0, 3).map((card, index) => (
+                    <Card
+                      key={card.name}
+                      image={card.coverPic}
+                      to={"projects/" + index}
+                      bottomText={card.name}
+                    />
+                  ))}
                   </Grid>
                   <Button to={"/projects"} variant="outlined">
                     View More
