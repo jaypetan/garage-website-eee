@@ -25,9 +25,13 @@ const Home = () => {
   const { data: eventData } = useFetch({
     url: API_DOMAIN + "?type=events&fields=name,coverPic",
   });
+  const { data: pastEventData } = useFetch({
+    url: API_DOMAIN + "?type=pastEvents&fields=name,coverPic",
+  });
   const { data: newsletterData } = useFetch({
     url: API_DOMAIN + "?type=newsletter",
   });
+  
 
   return (
     <Transition isLoading={isLoading}>
@@ -163,7 +167,7 @@ const Home = () => {
               )}
             </section>
             <section className={styles["section-wrapper"]}>
-              <Typography variant={"heading"}>OUR EVENTS</Typography>
+              <Typography variant={"heading"}>FLAGSHIP EVENTS</Typography>
               {eventData ? (
                 <Grid>
                   {eventData.map((card, index) => (
@@ -181,7 +185,30 @@ const Home = () => {
                 </div>
               )}
             </section>
-
+            <section className={styles["section-wrapper"]}>
+              <Typography variant={"heading"}>PAST EVETNS</Typography>
+              {pastEventData ? (
+                <div className={styles["grid-wrapper"]}>
+                  <Grid>
+                  {pastEventData.slice(0, 3).map((card, index) => (
+                    <Card
+                      key={card.name}
+                      image={card.coverPic}
+                      to={"projects/" + index}
+                      bottomText={card.name}
+                    />
+                  ))}
+                  </Grid>
+                  <Button to={"/projects"} variant="outlined">
+                    View More
+                  </Button>
+                </div>
+              ) : (
+                <div className={styles["loading-wrapper"]}>
+                  <LoadingSpinner />
+                </div>
+              )}
+            </section>
             <section className={styles["section-wrapper"]}>
               <Typography variant={"heading"}>Behind The Rollerdoor</Typography>
               <Typography variant="body">{data.newsletter}</Typography>

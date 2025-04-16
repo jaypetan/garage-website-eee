@@ -87,7 +87,10 @@ const Header = () => {
       to: "/projects",
     },
     {
-      label: "Events",
+      label: "Past Events",
+    },
+    {
+      label: "Flagship Events",
       to: "/events",
     },
     {

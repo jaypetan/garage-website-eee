@@ -4,7 +4,7 @@ import { API_DOMAIN } from "../../utils/Constants";
 import OverviewPage from "../../components/overviewPage/OverviewPage";
 import PageTemplate from "../../components/pageTemplate/PageTemplate";
 
-const Events = () => {
+const FlagshipEvents = () => {
   const { data, isLoading } = useFetch({
     url: API_DOMAIN + "?type=events&fields=name,tagline,coverPic",
   });
@@ -12,10 +12,10 @@ const Events = () => {
   return (
     <Transition isLoading={isLoading}>
       <PageTemplate>
-        {data && <OverviewPage heading={"Events"} data={data} />}
+        {data && <OverviewPage heading={"Flagship Events"} data={data} />}
       </PageTemplate>
     </Transition>
   );
 };
 
-export default Events;
+export default FlagshipEvents;
