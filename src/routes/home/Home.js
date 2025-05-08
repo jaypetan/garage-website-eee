@@ -186,7 +186,7 @@ const Home = () => {
               )}
             </section>
             <section className={styles["section-wrapper"]}>
-              <Typography variant={"heading"}>PAST EVETNS</Typography>
+              <Typography variant={"heading"}>PAST EVENTS</Typography>
               {pastEventData ? (
                 <div className={styles["grid-wrapper"]}>
                   <Grid>
