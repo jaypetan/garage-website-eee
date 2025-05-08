@@ -28,7 +28,7 @@ const Home = () => {
   const { data: newsletterData } = useFetch({
     url: API_DOMAIN + "?type=newsletter",
   });
-
+  
   return (
     <Transition isLoading={isLoading}>
       {!isLoading && (
